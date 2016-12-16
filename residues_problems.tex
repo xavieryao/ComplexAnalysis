@@ -1,0 +1,133 @@
+\section{Problems}
+\begin{homeworkProblem}
+    求证
+    \[
+        \oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
+        = \oint_{\vert z \vert = r > 1} \frac{z^{2n}}{1+z^n}{\mathrm{d}z}
+        = \left\{ \begin{array}{ll}
+        2\pi i & n = 1 \\
+        0 & n \ge 2 \end{array} \right
+    \]
+    \solution
+    \[
+        \begin{equation*}
+            \begin{split}
+                \oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
+                & = 2\pi i \sum_{k=1}^{n}\Res [\frac{1}{1+z^n}, z_k] \\
+                & = 2\pi i \sum_{k=1}^{n}\frac{1}{nz_{k}^{n-1}} \\
+                & = \frac{2\pi i}{n}\sum_{k=1}^{n}\frac{1}{z_{k}^{n-1}}
+            \end{split}
+        \end{equation*}
+    \]
+    注意到 \[ z_k^n = 1 \] 则 \[ -z_k = \frac{1}{z_k^{n-1}} \]
+    因此
+    \[
+    \begin{split}
+        \oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
+        & = \frac{2\pi i}{n}\sum_{k=1}^{n}\frac{1}{z_{k}^{n-1}}\\
+        & = -\frac{2\pi i}{n}\sum_{k=1}^{n}z_k
+    \end{split}
+    \]
+    若 $n = 1$，即 \[1 + z^n = 0\] 解得 \[z=-1\] 因此
+    \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z} = 2\pi i\]
+    否则 \[\sum_{k=1}^n z_k = 0\]
+    即 \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z} = 0\]
+    所以
+    \[\begin{split}
+    \frac{z^{2n}}{1+z^n}
+    & = \frac{(z^{2n} - 1) + 1}{1+z^n}\\
+    & = \frac{(z^{n} - 1)(z^{n} + 1)}{1+z^n} + \frac{1}{1+z^n}\\
+    & = z^{n} - 1 + \frac{1}{1+z^n}
+    \end{split}\]
+    又 \[\oint_{\vert z \vert = r > 1}z^{n} - 1 = 0\]
+    所以 \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
+    = \oint_{\vert z \vert = r > 1} \frac{z^{2n}}{1+z^n}{\mathrm{d}z}\]
+    综上，
+    \[
+    \oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
+    = \oint_{\vert z \vert = r > 1} \frac{z^{2n}}{1+z^n}{\mathrm{d}z}
+    = \left\{ \begin{array}{ll}
+    2\pi i & n = 1 \\
+    0 & n \ge 2 \end{array} \right
+    \]
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    求积分
+    \[
+    \oint_{|z| = r > 0}\frac{1-\cos4z^3}{z^n}\mathrm{d}z \qquad n\in\mathbb{Z}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    \oint_{|z| = r > 1}\frac{z^3 e^\frac{1}{z}}{1+z}\mathrm{d}z
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\sin\theta}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_p = \int_0^{2\pi}\frac{\mathrm{d}\theta}{1-2p\cos\theta+p^2}\qquad p\in(-1,1)
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_{A,B} = \int_0^{2\pi}{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}\qquad A,B\in\mathbb{R} \textrm{and} A,B>0
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_{A,B} = \int_0^{2\pi}\frac{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}\qquad A,B\in\mathbb{R} \textrm{and} AB>0
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_{n} = \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_{n,r} = \int_0^{+\infty}\frac{\dx}{r^{2n}+x^{2n}}\qquad n\in\mathbb{N}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    J_n = \int_0^{+\infty}\frac{\dx}{(1+x^2)^n} \qquad n\in\mathbb{N}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    J_n = \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n} \qquad n\in\mathbb{N}
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_{a,b,k} = \int_0^{+\infty}\frac{x\sin kx}{(x^2+a^2)(x^2+b^2)}\dx
+    \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求积分
+    \[
+    I_{a,b,k} = \int_0^{+\infty}\frac{x^2\cos kx}{(x^2+a^2)(x^2+b^2)}\dx
+    \]
+\end{homeworkProblem}
