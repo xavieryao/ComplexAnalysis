@@ -8,7 +8,7 @@
         2\pi i & n = 1 \\
         0 & n \ge 2 \end{array} \right
     \]
-    \solution
+\textbf{\large Solution 1}
     \[
         \begin{equation*}
             \begin{split}
@@ -23,12 +23,12 @@
     因此
     \[
     \begin{split}
-        \oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
-        & = \frac{2\pi i}{n}\sum_{k=1}^{n}\frac{1}{z_{k}^{n-1}}\\
-        & = -\frac{2\pi i}{n}\sum_{k=1}^{n}z_k
+        &\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}\\
+        =& \frac{2\pi i}{n}\sum_{k=1}^{n}\frac{1}{z_{k}^{n-1}}\\
+        =& -\frac{2\pi i}{n}\sum_{k=1}^{n}z_k
     \end{split}
     \]
-    若 $n = 1$，即 \[1 + z^n = 0\] 解得 \[z=-1\] 因此
+    若 $n = 1$，即 \[1 + z^n = 1 + z= 0\] 解得 \[z=-1\] 因此
     \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z} = 2\pi i\]
     否则 \[\sum_{k=1}^n z_k = 0\]
     即 \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z} = 0\]
@@ -50,7 +50,31 @@
     2\pi i & n = 1 \\
     0 & n \ge 2 \end{array} \right
     \]
-
+\textbf{\large Solution 2}\newline
+令$z=re^{i\theta}\quad 0\le\theta<\2\pi,t=\frac{1}{z}$，则
+\begin{gather*}
+    |t| = \frac{1}{r} < 1\\
+    t=\frac{1}{r}e^{-i\theta}\\
+    \mathrm{d}z = \mathrm{d}(\frac{1}{t})=-\frac{1}{t^2}\mathrm{d}t\qquad0\le\theta<\2\pi\quad\textrm{积分方向为顺时针}
+\end{gather*}
+此时原积分
+\[
+\begin{split}
+    \oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
+    &= -\oint_{|t|=\frac{1}{r}<1}\frac{1}{1+\frac{1}{t^2}}(-\frac{1}{t^2})\mathrm{d}t\\
+    &= \oint_{|t|=\frac{1}{r}<1}\frac{t^{n-2}}{1+t^n}\mathrm{d}t
+\end{split}
+\]
+只有一个奇点$t=0$。因此
+\[
+\begin{split}
+    I_n
+    &= \oint_{|t|=\frac{1}{r}<1}\frac{t^{n-2}}{1+t^n}\mathrm{d}t\\
+    &=\left\bigg\{\begin{array}{ll}0& n\geq2\qquad\textrm{(Cauchy-Goursat 定理)} \\
+    \oint_{|t|=\frac{1}{r}<1}\frac{1}{t(t+1)}\mathrm{d}t=2\pi i & n=1
+    \end{array}\right
+\end{split}
+\]
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
@@ -58,12 +82,50 @@
     \[
     \oint_{|z| = r > 0}\frac{1-\cos4z^3}{z^n}\mathrm{d}z \qquad n\in\mathbb{Z}
     \]
+
+\solution
+当$n\leq 0$时
+\[
+\oint_{|z| = r > 0}\frac{1-\cos4z^3}{z^n}\mathrm{d}z = 0
+\]
+当$n > 0$时
+\[\begin{split}
+\frac{1-\cos4z^3}{z^n}
+&=z^{-n}(1-\sum_{k=0}^n(-1)^k\frac{(4z^3)^{2k}}{(2k)!})\\
+&=z^{-n}(1-\sum_{k=0}^n(-1)^k\frac{4^{2k}z^{6k}}{(2k)!})\\
+&=z^{-n}\sum_{k=1}^n(-1)^{k-1}\frac{4^{2k}z^{6k}}{(2k)!}\\
+\end{split}\]
+$\frac{1-\cos4z^3}{z^n}$在奇点$z=0$的Laurent级数$\sum_{n=-\infty}^{+\infty}C_nz^n$中，$C_{-1}$对应上式中
+\[
+6k-n=-1
+\]
+此时
+\[\begin{split}
+C_{-1}&=(-1)^{k-1}\frac{4^{2k}}{(2k)!}\qquad{k=\frac{n-1}{6}}\\
+&=(-1)^{\frac{n-7}{6}}\frac{4^{\frac{n-1}{3}}}{(\frac{n-1}{3})!}
+\end{split}\]
+所以$n > 0$时
+\[\begin{split}
+\oint_{|z| = r > 0}\frac{1-\cos4z^3}{z^n}\mathrm{d}z
+&=2\pi i\Res[\frac{1-\cos4z^3}{z^n}, 0]\\
+&=2\pi i C_{-1}\\
+&=2\pi i(-1)^{\frac{n-7}{6}}\frac{4^{\frac{n-1}{3}}}{(\frac{n-1}{3})!}
+\end{split}\]
+综上，
+\[\begin{split}
+\oint_{|z| = r > 0}\frac{1-\cos4z^3}{z^n}\mathrm{d}z
+= \left\{\begin{array}{ll}
+2\pi i(-1)^{\frac{n-7}{6}}\frac{4^{\frac{n-1}{3}}}{(\frac{n-1}{3})!} & n=6k+1, k\in\mathbb{N} \\
+0 & n\neq 6k+1, k\in\mathbb{N}\end{array}\right
+\end{split}\]
 \end{homeworkProblem}
+
 \begin{homeworkProblem}
     求积分
     \[
     \oint_{|z| = r > 1}\frac{z^3 e^\frac{1}{z}}{1+z}\mathrm{d}z
     \]
+\solution
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
