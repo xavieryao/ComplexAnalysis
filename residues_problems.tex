@@ -126,6 +126,30 @@ C_{-1}&=(-1)^{k-1}\frac{4^{2k}}{(2k)!}\qquad{k=\frac{n-1}{6}}\\
     \oint_{|z| = r > 1}\frac{z^3 e^\frac{1}{z}}{1+z}\mathrm{d}z
     \]
 \solution
+令$t=\frac{1}{z}$,则
+\begin{gather*}
+    |t| = \frac{1}{r} < 1\\
+    t=\frac{1}{r}e^{-i\theta}\\
+    \mathrm{d}z = \mathrm{d}(\frac{1}{t})=-\frac{1}{t^2}\mathrm{d}t\qquad0\le\theta<\2\pi\quad\textrm{积分方向为顺时针}
+\end{gather*}
+原积分
+\[\begin{split}
+\oint_{|z| = r > 1}\frac{z^3 e^\frac{1}{z}}{1+z}\mathrm{d}z
+&= -\oint_{|t| = \frac{1}{r} < 1}\frac{e^t}{t^2(t+1)}(-\frac{1}{t^2})\mathrm{d}t \\
+&= \oint_{|t| = \frac{1}{r} < 1}\frac{e^t}{t^4(t+1)}\mathrm{d}t \\
+&= 2\pi i\Res[\frac{e^t}{t^4(t+1)}, 0]
+\end{split}\]
+又
+\[\begin{split}
+\frac{e^t}{t^4(t+1)} &= t^{-4}(1+t+\frac{t^2}{2!}+\frac{t^3}{3!}+\dots)(1-t+t^2-t^3+\dots)
+\end{split}\]
+其中，$t^{-1}$的系数为
+\[-1+1-\frac{1}{2!}+\frac{1}{3!} = -\frac{1}{3}\]
+因此
+\[\oint_{|z| = r > 1}\frac{z^3 e^\frac{1}{z}}{1+z}\mathrm{d}z
+=2\pi i\Res[\frac{e^t}{t^4(t+1)}, 0]
+=2\pi i (-\frac{1}{3})
+=-\frac{2}{3}\pi i\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
