@@ -32,14 +32,14 @@
     \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z} = 2\pi i\]
     否则 \[\sum_{k=1}^n z_k = 0\]
     即 \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z} = 0\]
-    所以
+    又
     \[\begin{split}
-    \frac{z^{2n}}{1+z^n}
-    & = \frac{(z^{2n} - 1) + 1}{1+z^n}\\
-    & = \frac{(z^{n} - 1)(z^{n} + 1)}{1+z^n} + \frac{1}{1+z^n}\\
-    & = z^{n} - 1 + \frac{1}{1+z^n}
+    \oint_{\vert z \vert = r > 1}\frac{z^{2n}}{1+z^n}\mathrm{d}z
+    & = \oint_{\vert z \vert = r > 1}\frac{(z^{2n} - 1) + 1}{1+z^n} \mathrm{d}z\\
+    & = \oint_{\vert z \vert = r > 1}\frac{(z^{n} - 1)(z^{n} + 1)}{1+z^n}\mathrm{d}z + \oint_{\vert z \vert = r > 1}\frac{1}{1+z^n}\mathrm{d}z \\
+    & = \oint_{\vert z \vert = r > 1}(z^{n} - 1)\mathrm{d}z + \oint_{\vert z \vert = r > 1}\frac{1}{1+z^n}\mathrm{d}z
     \end{split}\]
-    又 \[\oint_{\vert z \vert = r > 1}z^{n} - 1 = 0\]
+    由Cauchy-Goursat定理 \[\oint_{\vert z \vert = r > 1}(z^{n} - 1)\mathrm{d}z  = 0\]
     所以 \[\oint_{\vert z \vert = r > 1} \frac{1}{1+z^n}{\mathrm{d}z}
     = \oint_{\vert z \vert = r > 1} \frac{z^{2n}}{1+z^n}{\mathrm{d}z}\]
     综上，
@@ -115,7 +115,7 @@ C_{-1}&=(-1)^{k-1}\frac{4^{2k}}{(2k)!}\qquad{k=\frac{n-1}{6}}\\
 \[\begin{split}
 \oint_{|z| = r > 0}\frac{1-\cos4z^3}{z^n}\mathrm{d}z
 = \left\{\begin{array}{ll}
-2\pi i(-1)^{\frac{n-7}{6}}\frac{4^{\frac{n-1}{3}}}{(\frac{n-1}{3})!} & n=6k+1, k\in\mathbb{N} \\
+2\pi i(-1)^{\frac{n-7}{6}}\cfrac{4^{\frac{n-1}{3}}}{(\frac{n-1}{3})!} & n=6k+1, k\in\mathbb{N} \\
 0 & n\neq 6k+1, k\in\mathbb{N}\end{array}\right
 \end{split}\]
 \end{homeworkProblem}
@@ -244,6 +244,34 @@ I_{A,B} &= \int_0^{2\pi}\frac{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}\\
 &=\frac{2\pi}{AB}
 \end{split}\]
 \end{homeworkProblem}
+
+\begin{homeworkProblem}
+    求积分
+    \[I_n=\int_0^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\dx\]
+\solution
+$\frac{1}{(x^2+a^2)(x^2+b^2)}$是偶函数，因此
+\[\begin{split}
+I_n&=\int_0^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\dx\\
+&=\frac{1}{2}\int_{-\infty}^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\\
+&=\frac{1}{2}\lim{R \rightarrow +\infty}\int_{-R}^{+R}\frac{1}{(x^2+a^2)(x^2+b^2)}
+\end{split}\]
+而
+\[\begin{split}
+&\lim_{R \rightarrow +\infty}\int_{-R}^{+R}\frac{1}{(x^2+a^2)(x^2+b^2)}
++ \int_{|z|=R, Im[z]>0}\frac{1}{(z^2+a^2)(z^2+b^2)}\mathrm{d}z\\
+=& 2\pi i(\Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|a|] + \Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|b|])\\
+=& 2\pi i(\frac{1}{4(i|a|)^3+2i|a|(a^2+b^2)+ab}+\frac{1}{4(i|b|)^3+2i|b|(a^2+b^2)+ab})
+\end{split}\]
+\begin{theorem*}
+    若$P_n(z),Q_m(z)$是多项式，且$degP_n = n \leq degQ_m-2=m-2$，$Q_m(z)$在实轴$z=x$上没有零点，即$Q_m(x)\neq0,\forall x\in\mathbb{R}$，则$\lim_{R\rightarrow +\infty}\int_{|z|=R, Im[z]>0}\frac{P_n(z)}{Q_m(z)}\mathrm{d}z=0$
+\end{theorem*}
+所以
+\[\begin{split}
+I_n &= \frac{1}{2}2\pi i(\Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|a|] + \Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|b|])\\
+&=\pi i(\frac{1}{4(i|a|)^3+2i|a|(a^2+b^2)+ab}+\frac{1}{4(i|b|)^3+2i|b|(a^2+b^2)+ab})
+\end{split}\]
+\end{homeworkProblem}
+
 \begin{homeworkProblem}
     求积分
     \[
