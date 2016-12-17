@@ -154,32 +154,95 @@ C_{-1}&=(-1)^{k-1}\frac{4^{2k}}{(2k)!}\qquad{k=\frac{n-1}{6}}\\
 \begin{homeworkProblem}
     求积分
     \[
-    \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}
+    \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta} \qquad a>|b|\quad a,b\in\mathbb{R}
     \]
+\solution
+令$z=e^{i\theta}, \theta\in[0, 2\pi)$，注意到:
+\begin{gather*}
+\cos\theta = \frac{e^{i\theta}+e^{-i\theta}}{2}=\frac{z+\frac{1}{z}}{2}=\frac{z^2+1}{2z}\\
+\mathrm{d}\theta = \frac{\mathrm{d}z}{ie^{i\theta}}=\frac{\mathrm{d}z}{iz}\\
+\end{gather*}
+则原积分
+\[\begin{split}
+\int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}
+&= \oint_{|z|=1}\cfrac{\frac{\mathrm{d}z}{iz}}{a+b(\frac{z^2+1}{2z})}\\
+&=\frac{2}{i}\oint_{|z|=1}\frac{\mathrm{d}z}{bz^2+2az+b}
+\end{split}\]
+当$b=0$时，原积分
+\[\int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}
+=\int_0^{2\pi}\frac{\mathrm{d}\theta}{a}
+=\frac{2\pi}{a}\]
+当$b\neq0$时，原积分
+\[\begin{split}\int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}
+&=\frac{2}{i}\oint_{|z|=1}\frac{\mathrm{d}z}{bz^2+2az+b}\\
+&=\frac{2}{ib}\oint_{|z|=1}\frac{\mathrm{d}z}{z^2+\frac{2a}{b}z+1}
+\end{split}\]
+对方程\[z^2+\frac{2a}{b}z+1=0\]其两根\[z_1z_2=1\]且
+\[z_{1,2}=-\frac{a}{b}\pm\frac{\sqrt{a^2-b^2}}{b}\]
+可设$b>0$，则
+\[z_2 =-\frac{a}{b}\-\frac{\sqrt{a^2-b^2}}{b}<-\frac{a}{b}<-1\]
+即只有一个奇点$z_1$。所以原积分
+\[\begin{split}
+\int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}
+&=\frac{2}{ib}\oint_{|z|=1}\frac{\mathrm{d}z}{z^2+\frac{2a}{b}z+1}\\
+&=\frac{2}{ib}2\pi i\frac{1}{2z_1+\frac{2a}{b}}\\
+&=\frac{2\pi}{\sqrt{a^2-b^2}}
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
     \[
-    \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\sin\theta}
+    \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\sin\theta} \qquad a>|b|\quad a,b\in\mathbb{R}
     \]
+\solution
+\begin{theorem*}
+    若$f(x)$在$[-1,1]$上可积，则$\int_0^{2\pi}f(\cos x)\dtheta=\int_0^{2\pi}f(\sin x)\dtheta$
+\end{theorem*}
+所以
+\[\int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\sin\theta}=\int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}=\frac{2\pi}{\sqrt{a^2-b^2}}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
     \[
     I_p = \int_0^{2\pi}\frac{\mathrm{d}\theta}{1-2p\cos\theta+p^2}\qquad p\in(-1,1)
     \]
+\solution
+令
+\begin{gather*}
+a=1+p^2\\
+b=-2p
+\end{gather*}
+则\[a>b\quad a,b\in(-1,1)\]
+因此
+\[\begin{split}
+I_p
+&= \int_0^{2\pi}\frac{\mathrm{d}\theta}{1-2p\cos\theta+p^2}\\
+&= \int_0^{2\pi}\frac{\mathrm{d}\theta}{a+b\cos\theta}\\
+&=\frac{2\pi}{\sqrt{a^2-b^2}} \\
+&=\frac{2\pi}{1-p^2}
+\end{split} \]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
     \[
-    I_{A,B} = \int_0^{2\pi}{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}\qquad A,B\in\mathbb{R} \textrm{and} A,B>0
+    I_{A,B} = \int_0^{2\pi}\frac{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}
+    \qquad A,B\in\mathbb{R}\quadAB>0
     \]
-\end{homeworkProblem}
-\begin{homeworkProblem}
-    求积分
-    \[
-    I_{A,B} = \int_0^{2\pi}\frac{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}\qquad A,B\in\mathbb{R} \textrm{and} AB>0
-    \]
+\solution
+令
+\begin{gather*}
+\cos^2\theta = \frac{\cos2\theta+1}{2}\\
+\sin^2\theta = \frac{1-\cos2\theta}{2}
+\end{gather*}
+则
+\[\begin{split}
+I_{A,B} &= \int_0^{2\pi}\frac{\dtheta}{A^2\cos^2\theta + B^2\sin^2\theta}\\
+&= \int_0^{2\pi}\cfrac{\dtheta}{A^2\cfrac{\cos2\theta+1}{2} + B^2\cfrac{1-\cos2\theta}{2}} \\
+&= \int_0^{4\pi}\frac{\mathrm{d}t}{(A^2+B^2)+(A^2-B^2)\cos t}\\
+&= 2\int_0^{2\pi}\frac{\mathrm{d}t}{(A^2+B^2)+(A^2-B^2)\cos t}\\
+&=2\frac{2\pi}{\sqrt{(A^2+B^2)^2-(A^2-B^2)^2}}\\
+&=\frac{2\pi}{AB}
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
