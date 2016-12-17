@@ -253,17 +253,17 @@ $\frac{1}{(x^2+a^2)(x^2+b^2)}$是偶函数，因此
 \[\begin{split}
 I_n&=\int_0^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\dx\\
 &=\frac{1}{2}\int_{-\infty}^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\\
-&=\frac{1}{2}\lim{R \rightarrow +\infty}\int_{-R}^{+R}\frac{1}{(x^2+a^2)(x^2+b^2)}
+&=\frac{1}{2}\lim_{R \rightarrow +\infty}\int_{-R}^{+R}\frac{1}{(x^2+a^2)(x^2+b^2)}
 \end{split}\]
 而
 \[\begin{split}
 &\lim_{R \rightarrow +\infty}\int_{-R}^{+R}\frac{1}{(x^2+a^2)(x^2+b^2)}
-+ \int_{|z|=R, Im[z]>0}\frac{1}{(z^2+a^2)(z^2+b^2)}\mathrm{d}z\\
++ \int_{|z|=R, \mathrm{Im}z>0}\frac{1}{(z^2+a^2)(z^2+b^2)}\mathrm{d}z\\
 =& 2\pi i(\Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|a|] + \Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|b|])\\
 =& 2\pi i(\frac{1}{4(i|a|)^3+2i|a|(a^2+b^2)+ab}+\frac{1}{4(i|b|)^3+2i|b|(a^2+b^2)+ab})
 \end{split}\]
 \begin{theorem*}
-    若$P_n(z),Q_m(z)$是多项式，且$degP_n = n \leq degQ_m-2=m-2$，$Q_m(z)$在实轴$z=x$上没有零点，即$Q_m(x)\neq0,\forall x\in\mathbb{R}$，则$\lim_{R\rightarrow +\infty}\int_{|z|=R, Im[z]>0}\frac{P_n(z)}{Q_m(z)}\mathrm{d}z=0$
+    若$P_n(z),Q_m(z)$是多项式，且$degP_n = n \leq degQ_m-2=m-2$，$Q_m(z)$在实轴$z=x$上没有零点，即$Q_m(x)\neq0,\forall x\in\mathbb{R}$，则\[\lim_{R \rightarrow +\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{P_n(z)}{Q_m(z)}\mathrm{d}z=0\]
 \end{theorem*}
 所以
 \[\begin{split}
@@ -277,6 +277,46 @@ I_n &= \frac{1}{2}2\pi i(\Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|a|] + \Res[\frac{1
     \[
     I_{n} = \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}
     \]
+\solution
+\[\begin{split}
+I_{n} &= \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}\\
+&= \frac{1}{2}\int_{-\infty}^{+\infty}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}\\
+&= \lim_{R\rightarrow+\infty}\frac{1}{2}\int_{-R}^{+R}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}\\
+&= \frac{1}{2}2\pi i\sum_{k=0}^{i}\Res[\frac{1}{1+z^{2n}}, z_k] - \frac{1}{2}\lim_{R\rightarrow+\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{1}{1+z^{2n}}\mathrm{d}z\\
+&=\frac{1}{2}2\pi i\sum_{k=0}^{i}\Res[\frac{1}{1+z^{2n}}, z_k]
+\end{split}\]
+其中
+\[z_k^{2n}+1=0, \mathrm{Im}z_k>0\]
+则
+\[\begin{split}
+I_n &= \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\\
+&= \frac{1}{2}2\pi i\sum_{k=0}^{i}\Res[\frac{1}{1+z^{2n}}, z_k] \\
+&= \pi i\sum_{k=1}^{n}\Res[\frac{1}{1+z^{2n}}, z_k]\\
+&= \pi i\sum_{k=1}^{n}\frac{1}{2nz_k^{2n-1}}\\
+&= -\frac{\pi i}{2n}\sum_{k=1}^{n}z_k
+\end{split}\]
+由\[z_k^{2n}=-1=e^{\pi i}\]得\[z_k=e^\frac{\pi i+2(k-1)\pi i}{2n}=\cfrac{e^{k\pi i}{n}}{e^{\pi i}{2n}} \qquad k=1,2,\cdots,2n\]
+所以
+\[\begin{split}
+I_n &= -\frac{\pi i}{2n}\sum_{k=0}^{i}z_k \\
+&= -\frac{\pi i}{2n}\cfrac{\sum_{k=1}^{n}e^{\frac{k\pi i}{n}}}{e^{\frac{\pi i}{2n}}}\\
+&= -\frac{\pi i}{2n}\cfrac{e^{\frac{\pi i}{n}}(1-e^{\pi i})}{e^{\frac{\pi i}{2n}}(1-e^{\frac{\pi i}{n}})}\\
+&=-\frac{\pi i}{n}\cfrac{e^{\frac{\pi i}{2n}}}{1-e^{\frac{\pi i}{n}}}
+\end{split}\]
+令$\theta=\frac{\pi i}{2n}$，则
+\[\begin{split}
+\cfrac{e^{\frac{\pi i}{2n}}}{1-e^{\frac{\pi i}{n}}}
+&= \frac{\cos\theta + i\sin\theta}{1-\cos2\theta-i\sin\2\theta}\\
+&= \frac{\cos\theta + i\sin\theta}{2\sin^2\theta-2i\sin\theta\cos\theta}\\
+&= \frac{1}{-2i\sin\theta}
+\end{split}\]
+所以
+\[\begin{split}
+I_n &= -\frac{\pi i}{n}\cfrac{e^{\frac{\pi i}{2n}}}{1-e^{\frac{\pi i}{n}}}\\
+&= -\frac{\pi i}{n}\frac{\cos\theta + i\sin\theta}{1-\cos2\theta-i\sin\2\theta}\\
+&=-\frac{\pi i}{n}\frac{1}{-2i\sin\theta}\\
+&= \cfrac{\frac{\pi}{2n}}{\sin\frac{\pi}{2n}}
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
