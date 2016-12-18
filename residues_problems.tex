@@ -263,7 +263,7 @@ I_n&=\int_0^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\dx\\
 =& 2\pi i(\frac{1}{4(i|a|)^3+2i|a|(a^2+b^2)+ab}+\frac{1}{4(i|b|)^3+2i|b|(a^2+b^2)+ab})
 \end{split}\]
 \begin{theorem*}
-    若$P_n(z),Q_m(z)$是多项式，且$degP_n = n \leq degQ_m-2=m-2$，$Q_m(z)$在实轴$z=x$上没有零点，即$Q_m(x)\neq0,\forall x\in\mathbb{R}$，则\[\lim_{R \rightarrow +\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{P_n(z)}{Q_m(z)}\mathrm{d}z=0\]
+    若$P_n(z),Q_m(z)$是多项式，且$\mathrm{deg}P_n = n \leq \mathrm{deg}Q_m-2=m-2$，$Q_m(z)$在实轴$z=x$上没有零点，即$Q_m(x)\neq0,\forall x\in\mathbb{R}$，则\[\lim_{R \rightarrow +\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{P_n(z)}{Q_m(z)}\mathrm{d}z=0\]
 \end{theorem*}
 所以
 \[\begin{split}
@@ -323,6 +323,13 @@ I_n &= -\frac{\pi i}{n}\cfrac{e^{\frac{\pi i}{2n}}}{1-e^{\frac{\pi i}{n}}}\\
     \[
     I_{n,r} = \int_0^{+\infty}\frac{\dx}{r^{2n}+x^{2n}}\qquad n\in\mathbb{N}
     \]
+\solution
+\[\begin{split}
+I_{n,r} &= \int_0^{+\infty}\frac{\dx}{r^{2n}+x^{2n}}\\
+&= \frac{1}{r^{2n}}\int_0^{+\infty}\frac{\dx}{1+(\frac{x}{r})^{2n}}\\
+&= \frac{1}{r^{2n+1}}\int_0^{+\infty}\frac{\mathrm{d}(\frac{x}{r})}{1+(\frac{x}{r})^{2n}}\\
+&= \frac{1}{r^{2n+1}}I_n
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
