@@ -1,0 +1,38 @@
+\section{Chapter 2 Analytic Function}
+\begin{homeworkProblem}
+$f(z)=f(x+iy)=u(x,y)+iv(x,y)$且$u,v\in C^{(n)}$，求$f(z)$n阶可导的Cauchy-Riemann条件和$f^{(n)}(z)$\\
+\solution
+设$f'(z)=A+iB$，则
+\[\begin{array}{ll}
+\mathrm{d}f=f'(z)\mathrm{d}z=f'(z)(\dx+i\mathrm{d}y)
+\Leftrightarrow \mathrm{d}f&= \mathrm{d}u + i\mathrm{d}v \\
+&=\frac{\partial{u}}{\partial{x}}\dx+\frac{\partial{u}}{\partial{y}}\mathrm{d}y + i(\frac{\partial{v}}{\partial{x}}\dx + \frac{\partial{u}}{\partial{y}}\mathrm{d}y) \\
+& = (A\dx-B\mathrm{d}y) + i(B\dx + A\mathrm{d}y)\\
+\end{array}\]
+由上式得
+\[
+\left\{\begin{array}{l}
+A\dx-B\mathrm{d}y=\frac{\partial{u}}{\partial{x}}\dx+\frac{\partial{u}}{\partial{y}}\mathrm{d}y\\
+B\dx + A\mathrm{d}y=\frac{\partial{v}}{\partial{x}}\dx + \frac{\partial{u}}{\partial{y}}\mathrm{d}y
+\end{array}\right\]
+解得
+\[
+\left\{\begin{array}{l}
+\frac{\partial{u}}{\partial{x}}=\frac{\partial{v}}{\partial{y}}=A\\
+\frac{\partial{u}}{\partial{y}}=-\frac{\partial{v}}{\partial{x}}=-B\end{array}\right
+\]
+即
+\[f'(z)=\frac{\partial{u}}{\partial{x}} + i\frac{\partial{v}}{\partial{x}} = F'(z)\]
+而
+\[F'(z) = \frac{\partial{U}}{\partial{x}} + i\frac{\partial{V}}{\partial{x}}
+= \frac{\partial^2u}{\partial x^2} + i\frac{\partial^2v}{\partial x^2} \]
+由归纳法可证明
+\[f^{(n)}(z) = \frac{\partial^nu}{\partial x^n} + i\frac{\partial^nv}{\partial x^n}\]
+$u,v$需要满足Cauchy-Riemann条件
+\[
+\left\{\begin{array}{l}
+\frac{\partial{u}}{\partial{x}}=\frac{\partial{v}}{\partial{y}}\\
+\frac{\partial{u}}{\partial{y}}=-\frac{\partial{v}}{\partial{x}}
+\end{array}\right\]
+\end{homeworkProblem}
+\newpage
