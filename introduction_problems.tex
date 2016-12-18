@@ -1,0 +1,37 @@
+\section{Introduction}
+\begin{homeworkProblem}
+求\[\mathrm{max}|\alpha z^n+\beta| \qquad |z|\leq r\]
+\solution
+\[\mathrm{max}|\alpha z^n+\beta| = |\alpha|\mathrm{max}|z^n+\frac{\beta}{\alpha}|\]
+因此下面只讨论\[\mathrm{max}|z^n+\alpha| \qquad |z|\leq r\]
+有
+\[|z^n+\alpha| \leq |z^n| + |\alpha| \leq r^n + |\alpha|\]
+取最大值$\Leftrightarrow$等号成立$\Leftrightarrow z^n\textrm{与}\alpha\textrm{同向}\Leftrightarrow z^n = \lambda\alpha\quad \lambda > 0$\\
+当$\alpha=0$时
+\begin{gather*}
+    |z^n| = |z|^n = r^n\\
+    |z| = r\\
+    \mathrm{max}|\alpha z^n+\beta| = r^n \qquad z=re^{i\thata}\quad \theta\in[0,2\pi)
+\end{gather*}
+当$\alpha\neq 0$时\[\mathrm{max}|z^n+\alpha|=r^n+|\alpha|\]
+此时
+\begin{gather*}
+r^n = |z^n| = |\lambda\alpha|\\
+\lambda = \frac{|r|^n}{|\alpha|}\\
+z^n = \lambda\alpha=\frac{|r|^n}{|\alpha|}\alpha
+\end{gather*}
+设$\alpha = r_0e^{i\theta_0}$
+\[\begin{split}
+z^n &=\frac{|r|^n}{|\alpha|}\alpha \\
+&= \frac{|r|^n}{|\alpha|}r_0e^{i\theta_0} \\
+&= |r|^ne^{i\theta_0}
+\end{split}\]
+则取最大值时\[z=z_k=re^{\frac{i(\theta_0+2k\pi)}{n}} \qquad k=1,2,\cdots,n\]
+综上，
+\[
+\mathrm{max}|z^n+\alpha| = \left\{\begin{array}{lll}
+r^n & z=re^{i\theta}\quad \theta\in[0,2\pi) & \alpha=0\\
+r^n + |\alpha| & z=re^{\frac{i(\theta_0+2k\pi)}{n}} \quad k=1,2,\cdots,n & \alpha\neq0
+\end{array}\right
+\]
+\end{homeworkProblem}
