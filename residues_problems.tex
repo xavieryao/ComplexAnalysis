@@ -372,6 +372,13 @@ J_n &= \pi iC_{-1}\\
     \[
     J_{n,r} = \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n} \qquad n\in\mathbb{N}
     \]
+\solution
+\[\begin{split}
+J_{n,r} &= \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n}\\
+&= \int_0^{+\infty} \frac{1}{r^{2n}}\frac{r\mathrm{d}(\frac{x}{r})}{(1+(\frac{x}{r})^2)^n}\\
+&= \frac{1}{r^{2n-1}}\int_0^{+\infty}\frac{\mathrm{d}(\frac{x}{r})}{(1+(\frac{x}{r})^2)^n}\\
+&= \frac{1}{r^{2n-1}}J_n
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
