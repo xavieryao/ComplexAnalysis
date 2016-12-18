@@ -47,4 +47,59 @@ $u,v$需要满足Cauchy-Riemann条件
 &= \frac{1}{2}(e^y + e^{-y})\cos x + i\frac{1}{2}(-e^y + e^{-y})\sin x
 \end{split}\]
 \end{homeworkProblem}
+
+\begin{homeworkProblem}
+    求证：$\forall A,B\in\mathbb{R}$存在$z=x+iy$使得$\cos(x+iy) = A+iB$（即$\mathrm{Im}[\cos(z)]=\mathbb{C}$）\\
+\solution
+令
+\begin{equation}
+\begin{gathered}
+    \frac{e^y+e^{-y}}{2}\cos x = A\\
+    \frac{e^{-y}-e^y}{2}\sin x = B
+\end{gathered}
+\label{eq:1}
+\end{equation}
+\begin{enumerate}
+    \item 当$B=0$时，由式~\eqref{eq:1}~知$y=0$或$\sin x=0$。\\ $|A|\leq1$时可令$y=0$，此时
+        \[\cos x = A\]
+    解得\[
+        \left\{\begin{array}{l}
+        x=\arccos A + 2k\pi\qquad k\in\mathrm{Z}\\
+        y=0
+        \end{array}\right\]
+    $|A|>1$时，令$\sin x=0$得
+    \begin{gather*}
+        \cos x = \pm1\\
+        \frac{e^y+e^{-y}}{2} = |A| > 1
+    \end{gather*}
+    考察函数$f(y)={e^y+e^{-y}}{2}-1$
+    \begin{gather*}
+        f(0) = 0\\
+        \lim_{y\rightarrow+\infty}f(y) = \lim_{y\rightarrow-\infty}f(y) = +\infty
+    \end{gather*}
+    且$f(y)$连续。因此存在$y_A$使得$\pm y_A$是方程$\frac{e^y+e^{-y}}{2} = |A|$的解。\\
+    此时
+    \[
+    \left\{\begin{array}{l}
+    x=k\pi\qquad k\in\mathrm{Z}\\
+    y=\pm y_A
+    \end{array}\right\]
+
+    \item 当$B\neq0$时，由式~\eqref{eq:1}~知$y\neq0$。结合$\cos^2x+\sin^2x=1$得$y\in(-\infty,0)\cup(0,+\infty)$时
+    \[
+    \frac{4A^2}{(e^{-y}+e^y)^2} + \frac{4B^2}{(e^{-y}-e^y)^2} = 1
+    \]
+    令$f_{A,B}(y) = {4A^2}{(e^{-y}+e^y)^2} + \frac{4B^2}{(e^{-y}-e^y)^2}$，$f_{A,B}(y)$是偶函数。
+    \begin{gather*}
+        \lim_{y\rightarrow0^{+}}f_{A,B}(y) = +\infty\\
+        \lim_{y\rightarrow+\infty}f_{A,B}(y) = 0
+    \end{gather*}
+    因此$\exists y_{A,B} > 0$，使得$\pm y_{A_B}$是方程
+    \[
+        \frac{4A^2}{(e^{-y}+e^y)^2} + \frac{4B^2}{(e^{-y}-e^y)^2} = 1
+    \]
+    的根。将$\pm y_{A,B}$代入式~\eqref{eq:1}~可解出对应的$x$。
+\end{enumerate}
+
+\end{homeworkProblem}
 \newpage
