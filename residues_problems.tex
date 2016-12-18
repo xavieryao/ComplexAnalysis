@@ -391,7 +391,7 @@ J_{n,r} &= \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n}\\
 则
 \[\begin{split}
 I_{a,b,k} &= \int_0^{+\infty}\frac{x\sin kx}{(x^2+a^2)(x^2+b^2)}\dx\\
-&= \mathrm{Im}\int_0^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx
+&= \frac{1}{2}\mathrm{Im}\int_{-\infty}^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx
 \end{split}\]
 而
 \[\begin{split}
@@ -403,14 +403,14 @@ I_{a,b,k} &= \int_0^{+\infty}\frac{x\sin kx}{(x^2+a^2)(x^2+b^2)}\dx\\
 所以
 \[\begin{split}
 I_{a,b,k}
-&= \mathrm{Im}\int_0^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx\\
-&= \mathrm{Im}[\frac{\pi i}{b^2-a^2}(e^{-ka}-e^{-kb})]\\
-&= \frac{\pi}{b^2-a^2}(e^{-ka}-e^{-kb})
+&= \frac{1}{2}\mathrm{Im}\int_{-\infty}^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx\\
+&= \frac{1}{2}\mathrm{Im}[\frac{\pi i}{b^2-a^2}(e^{-ka}-e^{-kb})]\\
+&= \frac{\pi}{2(b^2-a^2)}(e^{-ka}-e^{-kb})
 \end{split}\]
 $a=b$时
 \[\begin{split}
 I_{a,b,k}
-&= \lim_{a\rightarrow b}\frac{\pi}{b^2-a^2}(e^{-ka}-e^{-kb}) \\
+&= \lim_{a\rightarrow b}\frac{\pi}{2(b^2-a^2)}(e^{-ka}-e^{-kb}) \\
 &= \frac{-k\pi e^{-kb}}{-4b} \\
 &= \frac{k\pi}{4ae^{ka}} = \frac{k\pi}{4be^{kb}}
 \end{split}\]
@@ -420,4 +420,14 @@ I_{a,b,k}
     \[
     I_{a,b,k} = \int_0^{+\infty}\frac{x^2\cos kx}{(x^2+a^2)(x^2+b^2)}\dx
     \]
+\solution
+$a\neq b$时
+\[\begin{split}
+I_{a,b,k} &= \int_0^{+\infty}\frac{x^2\cos kx}{(x^2+a^2)(x^2+b^2)}\dx\\
+&= \frac{1}{2}\int_{-\infty}^{+\infty}\frac{x^2\cos kx}{(x^2+a^2)(x^2+b^2)}\dx\\
+&= \frac{1}{2}\mathrm{Re}\int_{-\infty}^{+\infty}\frac{x^2e^{ikx}}{(x^2+a^2)(x^2+b^2)}\dx\\
+&= \frac{(be^{-kb}-ae^{-ka})\pi}{2(b^2-a^2)}
+\end{split}\]
+当$a=b$时
+\[I_{a,b,k} = \frac{(1-ka)\pi}{4ae^{ka}}= \frac{(1-kb)\pi}{4be^{kb}}\]
 \end{homeworkProblem}
