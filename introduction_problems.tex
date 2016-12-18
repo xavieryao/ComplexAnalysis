@@ -35,3 +35,62 @@ r^n + |\alpha| & z=re^{\frac{i(\theta_0+2k\pi)}{n}} \quad k=1,2,\cdots,n & \alph
 \end{array}\right
 \]
 \end{homeworkProblem}
+
+\begin{homeworkProblem}
+    \[|z|^2=z\overline{z}\qquad z^2=|z|^2\qquad\]
+等号成立的条件是？\newline
+\solution
+\[z^2 = |z|^2 = z\overline{z} \Leftrightarrow z(z-\overline{z})=0\Leftrightarrow z=\overline{z}\]
+即$z\in\mathbb{R}$时等号成立。
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+证明\[|z_1+ z_2|^2 + |z_1 - z_2|^2 = 2(|z_1|^2 + |z_2|^2)\] 并说明几何意义\newline
+\solution
+\[\begin{split}
+|z_1+ z_2|^2 + |z_1 - z_2|^2
+&= (z_1+z_2)\overline{(z_1+z_2)} + (z_1-z_2)\overline{(z_1-z_2)}\\
+&=(z_1+z_2)(\overline{z_1}+\overline{z_2}) + (z_1-z_2)(\overline{z_1}-\overline{z_2})\\
+&=z_1\overline{z_1} + z_1\overline{z_2} + z_2\overline{z_1} + z_2\overline{z_2} + z_1\overline{z_1}-z_1\overline{z_2}-z_2\overline{z_1} + z_2\overline{z_2} \\
+&= 2(z_1\overline{z_1} + z_2\overline{z_2})\\
+&= 2(|z_1|^2 + |z_2|^2)
+\end{split}\]
+几何意义：平行四边形对角线平方和等于对边平方和
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    $|z_1|=|z_2|=|z_3|=|z_4|=r\textrm{且}z_1+z_2+z_3+z_4=0$则$z_1$,$ z_2$,$z_3$,$z_4$满足什么条件时$z_1z_2z_3z_4$构成正方形？
+\solution
+\begin{theorem*}
+    $z_1,z_2,\cdots,z_n$将圆$|z|=\alpha$n等分$\Leftrightarrow$$z_k$是分圆多项式$z^n+\alpha=0$
+\end{theorem*}
+当$z_1$,$ z_2$,$z_3$,$z_4$构成正方形时，$(z-z_1)(z-z_2)(z-z_3)(z-z_4)$是分圆多项式。\\
+又
+\[\begin{split}
+&(z-z_1)(z-z_2)(z-z_3)(z-z_4)\\
+=& z^4 - \sum_{k=1}^{4}z_kz^3 + (z_1z_2 + z_1z_3 + z_1z_4 + z_2z_3 + z_2z_4+z_3z_4) z^2 \\
+&-(z_1z_2z_3 + z_1z_2z_4+z_1z_3z_4+z_2z_3z_4)z + z_1z_2z_3z_4
+\end{split}\]
+$(z-z_1)(z-z_2)(z-z_3)(z-z_4)${是分圆多项式}
+\[\begin{split}
+\Leftrightarrow& \left\{\begin{array}{ll}
+\sum_{k=1}^{4}z_k &= 0\\
+z_1z_2 + z_1z_3 + z_1z_4 + z_2z_3 + z_2z_4+z_3z_4 &= 0\\
+z_1z_2z_3 + z_1z_2z_4+z_1z_3z_4+z_2z_3z_4 &= 0\\
+z_1z_2z_3z_4 &\neq0
+\end{array}\right
+\end{split}\]
+而
+\begin{gather*}
+z_1z_2z_3 + z_1z_2z_4+z_1z_3z_4+z_2z_3z_4=z_1z_2z_3z_4(\frac{1}{z_1}+\frac{1}{z_2}+\frac{1}{z_3}+\frac{1}{z_4})\\
+z_k\overline{z_k} = |z_k|^2 = r^2
+\end{gather*}
+所以
+\begin{gather*}
+    \frac{1}{z_k} = \frac{\overline{z_k}}{r^2}\\
+    z_1z_2z_3 + z_1z_2z_4+z_1z_3z_4+z_2z_3z_4 = \frac{z_1z_2z_3z_4}{r^2}(\overline{z_1}+\overline{z_2}+\overline{z_3}+\overline{z_4})=0
+\end{gather*}
+所以$z_1$,$ z_2$,$z_3$,$z_4$需满足
+\[z_1z_2 + z_1z_3 + z_1z_4 + z_2z_3 + z_2z_4+z_3z_4 = 0\]
+\end{homeworkProblem}
