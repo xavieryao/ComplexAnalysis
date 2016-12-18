@@ -336,11 +336,41 @@ I_{n,r} &= \int_0^{+\infty}\frac{\dx}{r^{2n}+x^{2n}}\\
     \[
     J_n = \int_0^{+\infty}\frac{\dx}{(1+x^2)^n} \qquad n\in\mathbb{N}
     \]
+\solution
+\[\begin{split}
+J_n &= \int_0^{+\infty}\frac{\dx}{(1+x^2)^n}\\
+&=\frac{1}{2}\int_{-\infty}^{+\infty}\frac{\dx}{(1+x^2)^n}\\
+&=\lim_{R\rightarrow+\infty}\frac{1}{2}\int_{-R}^{+R}\frac{\dx}{(1+x^2)^n}\\
+&=\frac{1}{2}2\pi (i\Res[\frac{1}{(1+z^2)^n}, i]
+- \lim_{R\rightarrow+\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{1}{(1+z^2)^n}\mathrm{d}z)\\
+&=\frac{1}{2}(2\pi i\Res[\frac{1}{(1+z^2)^n}, i])\\
+&=\pi i\Res[\frac{1}{(1+z^2)^n}, i]
+\end{split} \]
+而
+\[\begin{split}
+\frac{1}{(1+z^2)^n} = \frac{1}{(z+i)^n(z-i)^n}
+\end{split}\]
+令$f(z)=\frac{1}{(z+i)^n}$
+\[\begin{split}
+\frac{1}{(1+z^2)^n} &= \frac{1}{(z+i)^n(z-i)^n}\\
+&= (z-i)^{-n}\sum_{k=0}^{+\infty}\frac{f^{(k)}(i)}{k!}(z-i)^k
+\end{split}\]
+要求$(z-i)^{-1}$对应的系数$C_{-1}$，对应于$k=n-1$
+\[\begin{split}
+C_{-1} &= \frac{f^{(n-1)}(i)}{(n-1)!}\\
+&= (-1)^{n-1}\frac{(2n-2)!(2i)^{-2n+1}}{[(n-1)!]^2}
+\end{split}\]
+因此
+\[\begin{split}
+J_n &= \pi iC_{-1}\\
+&= \pi i(-1)^{n-1}\frac{(2n-2)!(2i)^{-2n+1}}{[(n-1)!]^2}\\
+&= \frac{\pi(2n-2)!}{[(n-1)!]^22^{2n-1}}
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
     \[
-    J_n = \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n} \qquad n\in\mathbb{N}
+    J_{n,r} = \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n} \qquad n\in\mathbb{N}
     \]
 \end{homeworkProblem}
 \begin{homeworkProblem}
