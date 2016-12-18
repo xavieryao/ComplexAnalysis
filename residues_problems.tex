@@ -268,7 +268,8 @@ I_n&=\int_0^{+\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\dx\\
 所以
 \[\begin{split}
 I_n &= \frac{1}{2}2\pi i(\Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|a|] + \Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|b|])\\
-&=\pi i(\frac{1}{4(i|a|)^3+2i|a|(a^2+b^2)+ab}+\frac{1}{4(i|b|)^3+2i|b|(a^2+b^2)+ab})
+&=\pi i(\frac{1}{4(i|a|)^3+2i|a|(a^2+b^2)}+\frac{1}{4(i|b|)^3+2i|b|(a^2+b^2)})\\
+&= \frac{\pi}{2(|b|-|a|)|a||b|}
 \end{split}\]
 \end{homeworkProblem}
 
@@ -385,6 +386,34 @@ J_{n,r} &= \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n}\\
     \[
     I_{a,b,k} = \int_0^{+\infty}\frac{x\sin kx}{(x^2+a^2)(x^2+b^2)}\dx
     \]
+\solution
+设$a\neq b$
+则
+\[\begin{split}
+I_{a,b,k} &= \int_0^{+\infty}\frac{x\sin kx}{(x^2+a^2)(x^2+b^2)}\dx\\
+&= \mathrm{Im}\int_0^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx
+\end{split}\]
+而
+\[\begin{split}
+\int_0^{+\infty}\frac{xe^{\i x}}{(x^2+a^2)(x^2+b^2)}\dx
+&= 2\pi i\{\Res[\frac{ze^{ikz}}{(z^2+a^2)(z^2+b^2)}, ai] + \Res[\frac{ze^{ikz}}{(z^2+a^2)(z^2+b^2)}, bi]\}\\
+&= 2\pi i [\frac{aie^{-ka}}{4(ai)^3+2ai(a^2+b^2)} + \frac{bie^{-kb}}{4(bi)^3+2bi(a^2+b^2)}]\\
+&= \frac{\pi i}{b^2-a^2}(e^{-ka}-e^{-kb})
+\end{split}\]
+所以
+\[\begin{split}
+I_{a,b,k}
+&= \mathrm{Im}\int_0^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx\\
+&= \mathrm{Im}[\frac{\pi i}{b^2-a^2}(e^{-ka}-e^{-kb})]\\
+&= \frac{\pi}{b^2-a^2}(e^{-ka}-e^{-kb})
+\end{split}\]
+$a=b$时
+\[\begin{split}
+I_{a,b,k}
+&= \lim_{a\rightarrow b}\frac{\pi}{b^2-a^2}(e^{-ka}-e^{-kb}) \\
+&= \frac{-k\pi e^{-kb}}{-4b} \\
+&= \frac{k\pi}{4ae^{ka}} = \frac{k\pi}{4be^{kb}}
+\end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
     求积分
