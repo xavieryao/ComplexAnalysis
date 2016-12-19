@@ -1,1 +1,80 @@
 \section{Chapter 4 Series}
+\begin{definition*}{幂级数}
+    \[\sum_{n=0}^{+\infty}C_n(z-z_0)^n\]
+\end{definition*}
+\begin{definition*}{Fourier级数}
+    \[\sum_{n=0}^{+\infty}C_ne^{in\theta} = \sum_{n=0}^{+\infty}(a_n\cos n\theta + b_n\sin n\theta)\]
+\end{definition*}
+\begin{definition*}{Taylor级数}
+    \[\sum_{n=0}^{+\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n\]
+\end{definition*}
+\begin{definition*}{Laurent级数}
+    \[\sum_{n=-\infty}^{+\infty}C_n(z-z_0)^n\]
+\end{definition*}
+\begin{theorem*}{Abel 定理}
+    若$f(z)=\sum_{n=0}^{+\infty}C_nz^n$在$z_0$收敛，则$\forall z$有$|z|<|z_0|$时$f(z)$绝对收敛。
+    若存在$z_0$，$f(z)$在$z_0$发散，则$\forall z$有$|z|>|z_0|$时$f(z)$发散。（即幂级数的收敛域是圆盘）
+\end{theorem*}
+\begin{definition*}{收敛半径}
+    若存在常数$R>0$，当$|z|<R$时，$f(z)$绝对收敛，而当$|z|>R$时，$f(z)$发散，这时$R$称为$f(z)$的收敛半径。
+\end{definition*}
+\begin{theorem*}
+    若\[\lim_{n\rightarrow+\infty}|\frac{C_n}{C_{n+1}}|=\lambda\]
+    则$R=\lambda$
+\end{theorem*}
+\begin{theorem*}
+    若\[\lim_{n\rightarrow+\infty} |\frac{1}{\sqrt{n}{C_n}}|=\lambda\]
+    则$R=\lambda$
+\end{theorem*}
+\begin{theorem*}
+    若$f(z)$只有有限个奇点，则离原点最近的奇点$z_0$的模即为收敛半径。
+\end{theorem*}
+\begin{theorem*}
+    若$f(z)$在$z_0$处条件收敛，则$R=|z_0|$
+\end{theorem*}
+\begin{theorem*}
+    若$f(z)=\sum_{n=0}^{+\infty}C_nz^n$满足$C_n = a_n + b_n\qquad a_n,b_n\in\mathbb{R}$且$\sum_{n=0}^{+\infty}a_nz^n$的收敛半径是$R_1$，$\sum_{n=0}^{+\infty}b_nz^n$的收敛半径是$R_2$，则$R=\mathrm{min}\{R_1,R_2\}$
+\end{theorem*}
+\begin{theorem}
+\begin{homeworkProblem}
+    将$\frac{1}{z-b}$在$z_0=a$处展成Laurent级数，$a\neq b$\\
+\solution
+\[\begin{split}
+\frac{1}{z-b}
+&= \frac{1}{-(b-a) + (z-a)}\\
+&= \frac{1}{a-b}\frac{1}{1-\frac{z-a}{b-a}} \\
+&= \frac{1}{a-b}\sum_{n=0}^{+\infty}\frac{(z-a)^n}{(b-a)^n}\\
+&= \frac{1}{a-b}\sum_{n=0}^{+\infty}\frac{(-1)(z-a)^n}{(b-a)^{n+1}}
+\end{split}\]
+条件
+\[
+|\frac{z-a}{b-a}| < 1
+\]
+即\[0\leq|z-a|<|b-a|\]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    求\[f(z)=\frac{1}{(z-1)(z-2)}\]的Laurent级数\newline
+\solution
+\begin{enumerate}
+    \item 当$0<|z-1|<1$时
+    \[\begin{split}
+    f(z) &= \frac{(z-1) - (z-2)}{(z-1)(z-2)}\\
+    &= \frac{1}{z-2} - \frac{1}{z-1} \\
+    &= \frac{1}{z-1 -1} - \frac{1}{z-1} \\
+    &= -\frac{1}{1-(z-1)}- \frac{1}{z-1}\\
+    &= -\sum_{n=0}^{+\infty}(z-1)^n - \frac{1}{z-1}\\
+    &= \sum_{n=-1}^{+\infty}-(z-1)^n \qquad 0<|z-1|<1
+    \end{split}\]
+    \item 当$|z-1| > 1$时
+    \[\begin{split}
+    f(z) &= \frac{1}{z-2} - \frac{1}{z-1}\\
+    &= \frac{1}{z-1 - 1}- \frac{1}{z-1}\\
+    &= \frac{1}{z-1}\frac{1}{1-\frac{1}{z-1}}- \frac{1}{z-1}\\
+    &= \frac{1}{z-1}\sum_{n=0}^{+\infty}(\frac{1}{z-1})^n - \frac{1}{z-1}\\
+    &=\sum_{n=0}^{+\infty}(\frac{1}{z-1})^{n+1} - \frac{1}{z-1}\\
+    &=\sum_{n=1}^{+\infty}(\frac{1}{z-1})^{n+1}\\
+    &= \sum_{n=-\infty}^{-2}(\frac{1}{z-1})^{n}
+    \end{split}\]
+    \item 在$z=2$处展开同理
+\end{enumerate}
+\end{homeworkProblem}
