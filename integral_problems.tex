@@ -1,0 +1,49 @@
+\section{Chapter 3 Complex Integral}
+\begin{theorem*}{Cauchy-Goursat定理}
+    若$C$分段光滑，且$f(z)$在$C$上连续，在$C$内处处可导，则$\oint_C f(z)\mathrm{d}z=0$
+\end{theorem*}
+\begin{theorem*}{Cauchy 高阶导数公式}
+\[
+f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_{C_r} \frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}z
+\]
+这里$C_r = |z-z_0| = r$
+\end{theorem*}
+\begin{homeworkProblem}
+求证，$f(z)$是解析函数则
+\[f(z)\textrm{的像是}
+\left\{\begin{array}{ll}
+\textrm{二维区域} & f(z) \not\equiv C\\
+\textrm{点} & f(z) \equiv C
+\end{array}
+\right\]
+\solution
+有
+\begin{gather*}
+    J_{(x,y)} = \left(\begin{array}{cc}
+    \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\
+    \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}
+\end{array}\right)_{(x,y)} \\
+    \frac{\Delta u\Delta v}{\Delta x \Delta y} = |detJ|_{(x,y)}
+    = |\frac{\partial u}{\partial x} \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial x}|_{(x,y)}
+\end{gather*}
+因为$f(z)=u+iv$是解析函数
+\begin{gather*}
+    \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\\
+    \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+\end{gather*}
+所以
+\[
+\frac{\Delta u\Delta v}{\Delta x \Delta y} = (\frac{\partial u}{\partial x})^2 + (\frac{\partial v}{\partial x})^2 = |f'(x)|^2 \geq 0
+\]
+即
+\[\Delta u\Delta v = |f'(x)|^2\Delta x \Delta y\]
+若$f'(x)\not\equiv0$，那么$f(x)$不是常数。此时假设$f'(z_0)\neq0$，则
+\[\exists \delta > 0\textrm{使得}|z-z_0| < \delta\textrm{时} f'(z) \neq 0\]
+$|z-z_0| < \delta$时
+\[\Delta u\Delta v > 0\]
+即像是二维区域。\newline
+当$f'(z)\equiv 0$时，$f(z)$是常数，这时$f(z)$的像是一个点
+\begin{theorem*}{Lioville 定理}
+    有界的解析函数是常数
+\end{theorem*}
+\end{homeworkProblem}
