@@ -100,6 +100,66 @@ $u,v$需要满足Cauchy-Riemann条件
     \]
     的根。将$\pm y_{A,B}$代入式~\eqref{eq:1}~可解出对应的$x$。
 \end{enumerate}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    已知$e^w=z\neq0$，求\[w=\Ln z\]\\
+\solution
+设$w=u+iv\quad u,v\in \mathbb{R}$，则
+\begin{gather*}
+e^w = e^{u+iv} = e^ue^{iv} = z = re^{i\theta} \\
+\theta = \arg z \in [0,2\pi)\qquad r = |z| > 0
+\end{gather*}
+则
+\[\begin{array}{lll}
+&e^u &= r \\
+\Rightarrow& u &= \ln r
+\end{array}\]
+且
+\[\begin{array}{lll}
+&e^{iv} &= e^{i\theta} \\
+\Rightarrow& v &= \theta + 2k\pi \qquad k\in\mathbb{Z}\\
+&&= \arg z
+\end{array}\]
+所以
+\[\begin{array}{lll}
+w = u+iv &= \Ln z  &\\
+&= \ln z + 2k\pi i & k\in \mathbb{Z} \\
+&= \ln|z| + i\arg z + 2k\pi i & k\in \mathbb{Z}
+\end{array}\]
+\begin{theorem*}{Picard 小定理}
+若$f(z)$是解析函数且$f(z)$不是常数，则除去最多一个例外$w_0$，方程$f(z)=A+iB=w$至少有一个解$z$。
+\end{theorem*}
+\end{homeworkProblem}
 
+\begin{homeworkProblem}
+求\[\Ln (3+2i)\]
+\solution
+\[\begin{array} {lll}
+\Ln (3+2i) &= \ln(3+2i) + 2k\pi & k\in\mathbb{Z}\\
+&= \ln13 + i\arg(3+2i) + 2k\pi & k\in\mathbb{Z}
+\end{array}\end{split}\]
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    求\[\Ln z^n\]
+\solution
+\[\begin{array} {lll}
+\Ln z^n &= \ln z^n + 2k\pi & k\in\mathbb{Z}\\
+&= \ln|z^n| + i\arg z^n + 2k\pi & k\in\mathbb{Z} \\
+&= n\ln|z| + ni\arg z + 2k\pi & k\in\mathbb{Z} \\
+&= n\Ln z
+\end{array}\]
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+求
+\[i^{\sqrt3i}\]
+\solution
+\[\begin{split}
+i^{\sqrt3i} &=
+e^{\sqrt3i\Ln i}\\
+&= e^{\sqrt3i(\frac{\pi}{2}i + 2k\pi i)} \\
+&= e^{-\sqrt3(\frac{1}{2}+2k)\pi}\qquad k\in\mathbb{Z}
+\end{split}\]
 \end{homeworkProblem}
 \newpage
