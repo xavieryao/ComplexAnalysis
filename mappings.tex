@@ -1,0 +1,134 @@
+\section{Analytic Mappings}
+\begin{definition*}
+    $f(z)=\frac{az+b}{cz+d}~$其中$a,b,c,d\in\mathbb{C}$且$ad-bc\neq0$
+\end{definition*}
+\begin{theorem*}
+    分式线性映射保广义圆。（圆$\cup$直线映射到圆$\cup$直线）
+\end{theorem*}
+\begin{theorem*}
+    分式线性映射保对称点。即对广义圆，圆心映射到圆心，圆心的对称点映射到无穷，边界映射到边界（可由最大模原理得出）
+\end{theorem*}
+\begin{homeworkProblem}
+求分式线性映射$w=\frac{az+b}{cz+d}$将单位圆盘$|z|<1$映射到单位圆盘$|w|<1$且使$z_1$映射到$0$，这里$|z_1|<1$
+\newline
+\solution
+\[\begin{split}
+w &= \frac{az+b}{cz+d}\\
+&= \frac{a(z-(-\frac{b}{a}))}{b(z-(-\frac{d}{c}))}
+\end{split}\]
+根据题意\[w(z_1)=0\]
+根据保对称性，$z_1$的对称点$z_1'=\frac{1}{\overline{z_1}}$满足
+\[w(z_1')=\infty\]
+记$\frac{a}{c}=a'$则此时
+\[
+\begin{array}{ll}
+w &= a'\frac{z-z_1}{z-\frac{1}{\overline{z_1}}} \\
+&= (-\overline{z_1}a')\frac{z-z_1}{1-\overline{z_1}z} \\
+&= A(\frac{z-z_1}{1-\overline{z_1}z})
+\end{array}
+\]
+根据最大模原理，$|w|=1$时$|z|=1$，且$|z|=1$时
+\[
+1=\overline{z}z=|z|^2
+\]
+所以$|w|=1$时
+\[
+\begin{split}
+    1 = |A|\left|\frac{z-z_1}{1-\overline{z_1}z}\right| &= |A|\left|\frac{z-z_1}{z\overline{z}-\overline{z_1}z}\right| \\
+    &= \frac{|A|}{|z|}\frac{|z-z_1|}{|\overline{z}-\overline{z_1}|} \\
+    &= \frac{|A|}{|z|}\\
+    &= |A|
+\end{split}
+\]
+所以
+\[
+A = e^{i\theta} \qquad \theta\in[0, 2\pi)
+\]
+所以
+\[
+ w = e^{i\theta}\frac{z-z_1}{1-\overline{z_1}z} \qquad \theta\in[0,2\pi),|z_1|<1
+\]
+\end{homeworkProblem}
+\begin{corollary*}
+ $z_1=0$时$w = e^{i\theta}z$ 对应逆时针旋转$\theta$角
+\end{corollary*}
+\begin{corollary*}{不变式}
+    从单位圆盘到单位圆盘的映射满足
+    \[
+    \frac{|\mathrm{d}w|}{1-|w|^2} = \frac{|\mathrm{d}z|}{1-|z|^2}
+    \]
+\end{corollary*}
+\begin{proof}
+因为从单位圆盘到单位圆盘的映射
+\[
+w = \frac{az+b}{cz+d} = e^{i\theta}\frac{z-z_1}{1-\overline{z_1}z}
+\]
+所以
+\begin{gather*}
+a = e^{i\theta} \\
+b = -z_1e^{i\theta}\\
+c = -\overline{z_1} \\
+d = 1
+\end{gather*}
+又
+\[
+\frac{\mathrm{d}w}{\mathrm{d}z} = \frac{ad-bc}{(cz+b)^2}
+\]
+所以
+\[
+\left|\frac{\mathrm{d}w}{\mathrm{d}z}\right| = \frac{1-|z_1|^2}{|1-\overline{z_1}z|^2} > 0
+\]
+而
+\[
+\begin{split}
+1-|w|^2 &= 1-w\overline{w}\\
+&= 1 - e^{i\theta}\frac{z-z_1}{1-\overline{z_1}z}e^{-i\theta}\frac{\overline{z}-\overline{z_1}}{1-z_1\overline{z}} \\
+&= \frac{(1-\overline{z_1}z)(1-z_1\overline{z}) - (z-z_1)(\overline{z}-\overline{z_1})}
+{(1-\overline{z_1}z)(1-z_1\overline{z})} \\
+&= \frac{1-z_1\overline{z}-\overline{z_1}z+|z|^2|z_1|^2-z\overline{z}+z\overline{z_1}+z_1\overline{z}-|z_1|^2}{|z-zz_1|^2} \\
+&= \frac{1-|z_1|^2-|z|^2+|zz_1|^2}
+{|z-zz_1|^2} \\
+&= \frac{(1-|z|^2)(1-|z_1|^2)}
+{|z-zz_1|^2}\\
+\end{split}
+\]
+所以
+\[
+\left|\frac{\mathrm{d}w}{\mathrm{d}z}\right|
+= \frac{1-|z_1|^2}{|1-\overline{z_1}z|^2}
+ = \frac{1-|z_1|^2}{|1-zz_1|^2}
+\]
+所以
+\[
+\frac{|\mathrm{d}w|}{1-|w|^2} = \frac{|\mathrm{d}z|}{1-|z|^2}
+\]
+\end{proof}
+
+\begin{homeworkProblem}
+求分式线性映射使$|z-z_0|<r\longrightarrow|w-w_0|<R$且使$z_1\rightarrow w_0$。这里$|z_1-z_0|<r$。
+\newline
+\newline
+\solution
+$|z-z_0|<r$到以$z_0$为圆心的单位圆的映射为
+\[
+z' = \frac{z-z_0}{r}
+\]
+以$z_0$为圆心的单位圆到以$z_1$为圆心到单位圆的映射为
+\[
+w' = e^{i\theta}\frac{z'-z_1'}{1-\overline{z_1'}z'}
+\]
+从$|w-w_0|<R$到以$z_1$为圆心到单位圆的映射为
+\[
+w' = \frac{w-w_0}{R}
+\]
+所以
+\[
+w' = \frac{w-w_0}{R} = e^{i\theta}\cfrac{\frac{z-z_0}{r} - \frac{z_1-z_0}{r}}
+{1 - \overline{(\frac{z_1-z_0}{r})}(\frac{z_1-z_0}{r})}
+\]
+解得
+\[
+w = w_0 + e^{i\theta}Rr\frac{z-z_1}{r^2-\overline{(z_1-z_0)}(z-z_0)} \qquad \theta\in[0,2\pi)\quad|z_1-z_0|<r
+\]
+\end{homeworkProblem}
+\newpage
