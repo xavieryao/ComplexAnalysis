@@ -1,4 +1,4 @@
-\section{Analytic Mappings}
+\section{Chapter 6 Analytic Mappings}
 \begin{definition*}
     $f(z)=\frac{az+b}{cz+d}~$其中$a,b,c,d\in\mathbb{C}$且$ad-bc\neq0$
 \end{definition*}
@@ -107,7 +107,6 @@ d = 1
 \begin{homeworkProblem}
 求分式线性映射使$|z-z_0|<r\longrightarrow|w-w_0|<R$且使$z_1\rightarrow w_0$。这里$|z_1-z_0|<r$。
 \newline
-\newline
 \solution
 $|z-z_0|<r$到以$z_0$为圆心的单位圆的映射为
 \[
@@ -130,5 +129,56 @@ w' = \frac{w-w_0}{R} = e^{i\theta}\cfrac{\frac{z-z_0}{r} - \frac{z_1-z_0}{r}}
 \[
 w = w_0 + e^{i\theta}Rr\frac{z-z_1}{r^2-\overline{(z_1-z_0)}(z-z_0)} \qquad \theta\in[0,2\pi)\quad|z_1-z_0|<r
 \]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+求证上半复平面$\mathrm{Im}z>0$映射到单位圆盘$|w|<1$的分式线性映射为
+\[
+w = e^{i\theta}\frac{z-z_1}{z-\overline{z_1}}\qquad\theta\in[0,2\pi)\quad\mathrm{Im}z_1>0
+\]
+\begin{proof}
+根据保对称性，由于$z_1$映射到$0$，所以$z_1' = \overline{z_1}$映射到$\infty$。所以
+\[w=A\frac{z-z_1}{z-\overline{z_1}}\]
+当$z=x\in\mathbb{R}$时，根据最大模原理\[|w(z)| = 1\]
+因此
+\[
+\begin{split}
+1 = |w| &= |A|\left|\frac{x-z_1}{x-\overline{z_1}}\right| \\
+&= |A|\left|\frac{x-z_1}{\overline{x-z_1}}\right| \\
+&= |A|
+\end{split}
+\]
+即$|A|=1,~A=e^{i\theta}\quad\theta\in[0,2\pi)$
+所以
+\[
+w = e^{i\theta}\frac{z-z_1}{z-\overline{z_1}}\qquad\theta\in[0,2\pi)\quad\mathrm{Im}z_1>0
+\]
+\end{proof}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    求证当$a,~b,~c,~d\in\mathbb{R}$时，分式线性映射使得$\mathrm{Im}z>0$映射到$\mathrm{Im}w>0$的充要条件是$ad-bc>0$
+\begin{proof}
+    令
+\begin{gather*}
+z = x+iy\\
+x,y\in\mathbb{R}\\
+w=\frac{az+b}{cz+d}
+\end{gather*}
+则
+\[\begin{split}
+w &= u+iv \\
+&= \frac{a(x+iy)+b}{c(x+iy)+d}\\
+&= \frac{(ax+b)+iay}{(cx+d)+icy}\\
+&= \frac{[(ax+b)+iay][(cx+d)-icy]}{[(cx+d)+icy][(cx+d)-icy]}
+\end{split}\]
+而
+\[
+v = \mathrm{Im}w = \frac{ad-bc}{(cx+d)^2+c^2y^2}
+\]
+$y$与$v$同号
+$
+\Leftrightarrow ad-bc>0
+$
+\end{proof}
 \end{homeworkProblem}
 \newpage

@@ -47,7 +47,7 @@ r^n + |\alpha| & z=re^{\frac{i(\theta_0+2k\pi)}{n}} \quad k=1,2,\cdots,n & \alph
 
 \begin{homeworkProblem}
 证明\[|z_1+ z_2|^2 + |z_1 - z_2|^2 = 2(|z_1|^2 + |z_2|^2)\] 并说明几何意义\newline
-\solution
+\begin{proof}
 \[\begin{split}
 |z_1+ z_2|^2 + |z_1 - z_2|^2
 &= (z_1+z_2)\overline{(z_1+z_2)} + (z_1-z_2)\overline{(z_1-z_2)}\\
@@ -56,11 +56,12 @@ r^n + |\alpha| & z=re^{\frac{i(\theta_0+2k\pi)}{n}} \quad k=1,2,\cdots,n & \alph
 &= 2(z_1\overline{z_1} + z_2\overline{z_2})\\
 &= 2(|z_1|^2 + |z_2|^2)
 \end{split}\]
+\end{proof}
 几何意义：平行四边形对角线平方和等于对边平方和
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
-    $|z_1|=|z_2|=|z_3|=|z_4|=r\textrm{且}z_1+z_2+z_3+z_4=0$则$z_1$,$ z_2$,$z_3$,$z_4$满足什么条件时$z_1z_2z_3z_4$构成正方形？
+    $|z_1|=|z_2|=|z_3|=|z_4|=r\textrm{且}z_1+z_2+z_3+z_4=0$则$z_1$,$ z_2$,$z_3$,$z_4$满足什么条件时$z_1z_2z_3z_4$构成正方形？\newline
 \solution
 \begin{theorem*}
     $z_1,z_2,\cdots,z_n$将圆$|z|=\alpha$n等分$\Leftrightarrow$$z_k$是分圆多项式$z^n+\alpha=0$
@@ -96,11 +97,12 @@ z_k\overline{z_k} = |z_k|^2 = r^2
 \end{homeworkProblem}
 \begin{homeworkProblem}
 $f(z)$在$z_0$连续，$f(z_0)\neq0$。求证$\exists\delta>0$，当$|z-z_0|<\delta$时有$f(z)\neq0$\\
-\solution
+\begin{proof}
 因$f(z_0)\neq0$，有$|f(z_0)|>0$\\
 令$\varepsilon = \frac{1}{2}|f(z_0)| < |f(z_0)|$，因为$f(z)$在$z_0$连续，存在$\delta>0$使得$\forall z\quad|z-z_0|<\delta$
 \[||f(z)|-|f(z_0)|| \leq |f(z) - f(z_0)| < \frac{1}{2}|f(z_0)|\]
 即
 \[\frac{1}{2}|f(z_0)|<|f(z)|<\frac{3}{2}|f(z_0)|\]
+\end{proof}
 \end{homeworkProblem}
 \newpage
