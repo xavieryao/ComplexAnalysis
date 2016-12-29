@@ -181,4 +181,123 @@ $
 $
 \end{proof}
 \end{homeworkProblem}
+
+\begin{homeworkProblem}
+$L=ax+b$是与$x$轴交于$x_0$点，与$x$轴夹角为$\alpha$的直线，其中$\alpha\in[0,\pi)$，$x_0\in\mathbb{R}$。$M=\{z=u+iv|v>ux+b\}$，求将半平面$M$映到$|w-w_0|<R$的分式线性映射。\newline
+\solution
+将$M=\{z=u+iv|v>ux+b\}$映射到$\mathrm{z}>0$的映射为
+\[
+z_1 = (z-x_0)e^{-i\alpha}
+\]
+设半平面$M$中$z_0$点被所求分式线性映射映射到$w_0$，$z_0$被$z_1$映射到$z_1^0$\newline
+将$|w-w_0|<R$映射到单位圆的映射为
+\[
+w_1 = \frac{w-w_0}{R}
+\]
+将$\mathrm{z}>0$映射到单位圆盘的映射为
+\[
+w_1 = e^{i\theta}\frac{z_1 - z_1^0}{z_1-\overline{z_1^0}}
+\]
+即
+\[
+\frac{w-w_0}{R} = e^{i\theta}\frac{(z-x_0)e^{-i\alpha} - (z_0-x_0)e^{-i\alpha}}
+{(z-x_0)e^{-i\alpha} - \overline{(z_0-x_0)e^{-i\alpha}}}
+\]
+即
+\[
+w = w_0 + Re^{i\theta}\frac{z-z_1}{(z-x_0)-\overline{(z_1-x_0)}e^{2i\alpha}}
+\]
+这里$\theta\in[0,2\pi)$，$z_1\in M$。\newline
+取$\theta=0$，则
+\[
+w = w_0 + R\frac{z-z_1}{(z-x_0)-\overline{(z_1-x_0)}e^{2i\alpha}}
+\]
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    $M$是与$x$轴夹角为$\theta$，与$x$轴交于$x_1,x_2$点的条带，其中$x_1 < x_2,~0<\theta<2\pi$。求一个单值可导映射将$M$映射到单位圆盘。\newline
+\solution
+将$M$映射到$N = \{z|  z\in\mathbb{C},\mathrm{Im}z > 0 \land \mathrm{Im}z < h=(x_2-x_1)\sin\theta \}$且将$x_2$映射到原点的映射为
+\[
+z_1 = (z-x_2)e^{-i\theta}
+\]
+将$N$映射到$O = \{z|  z\in\mathbb{C},\mathrm{Im}z > 0 \land \mathrm{Im}z < \pi\}$的映射为
+\[
+z_2 = \frac{z_1\pi}{h} = \frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)h\sin\theta}
+\]
+将$O$映射到$\mathrm{Im}z>0$的映射为
+\[
+z_3 = e^{z_2}
+\]
+将$\mathrm{Im}z>0$映射到单位圆盘的一个映射为
+\[\begin{split}
+w &= \frac{z_3 - i}{z_3+i}\\
+&= \frac{e^{z_2} - i}{e^{z_3} + i} \\
+&= \cfrac{e^{\frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)h\sin\theta}}-i}{e^{\frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)h\sin\theta}}+i}
+\end{split}\]
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    求区域$D = \{|z-a|>a\textrm{与}|z-b|<b\}\textrm{之间的部分，这里}0<a<b\}$到单位圆盘$|w|<1$的单值解析映射。\newline
+\solution
+根据分式映射的保圆性，映射
+\[
+z_1 = \frac{z-2a}{z}
+\]
+将$D$映射到$E = \{z| z\in\mathbb{C},\mathrm{Re}z > 0 \land \mathrm{Re}z < \frac{b-a}{b}\}$，且将$z=2a$映射到原点。而
+\[
+z_2 = iz_1\frac{\pi}{\frac{b-a}{b}} = \frac{b-i\pi}{b-a}(\frac{z-2a}{z})
+\]
+将$E$映射到$F = \{z|  z\in\mathbb{C},\mathrm{Im}z > 0 \land \mathrm{Im}z < \pi\}$\newline
+将$F$映射到$\mathrm{Im}z>0$的映射为
+\[
+z_3 = e^{z_2}
+\]
+将$\mathrm{Im}z>0$映射到单位圆盘的一个映射为
+\[
+w = \frac{z_3-i}{z_3+i}=\cfrac{e^{\frac{b-i\pi}{b-a}(\frac{z-2a}{z})}-i}
+{e^{\frac{b-i\pi}{b-a}(\frac{z-2a}{z})}+i}
+\]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+    区域$D=\{\textrm{弦切角为}\alpha,~\textrm{弦为}AB}\textrm{的扇形，其中}0<\alpha<\pi\}$，求将$D$映射到单位圆盘$|w|<1$的单值解析映射。\newline
+\solution
+分式线性映射
+\[
+z_1 = -\frac{z-A}{z-B}
+\]
+将$D$映射为$E=\{z=re^{i\theta}|z\in\mathbb{C},~r>0\land 0<\theta<\alpha\}$。而映射
+\[
+z_2 = z_2^{\frac{\pi}{\alpha}}
+\]
+将$E$映射为$\mathrm{Im}z>0$。将$\mathrm{Im}z>0$映射为单位圆盘的一个映射为
+\[
+w = \frac{z_2-i}{z_2+i} = \frac{(-\frac{z-A}{z-B})^{\frac{\pi}{\alpha}}-i}
+{(-\frac{z-A}{z-B})^{\frac{\pi}{\alpha}}+i}
+\]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+求将区域$D=\{z=re^{i\theta}|z\in\mathbb{C},~r>0\land 0<\theta<\alpha\,~0<\alpha<\pi\}$映射到圆盘$\{w|~|w-w_0|<R\}$的一个单值解析映射。
+\solution
+映射
+\[
+z_1 = z^{\frac{\pi}{\alpha}}
+\]
+将$D$映射到上半复平面。映射
+\[
+w_1 = \frac{z_1-i}{z_1+i}
+\]
+将上半复平面映射到单位圆盘。而
+\[
+w_1 = \frac{w-w_0}{R}
+\]
+将圆盘$\{w|~|w-w_0|<R\}$映射到单位圆盘。因此
+\[
+w = w_0 + R\frac{z^{\frac{\pi}{\alpha}}-i}{z^{\frac{\pi}{\alpha}}+i}
+\]
+特例：由复平面第一象限（$\alpha=\frac{\pi}{2}$）到圆盘$\{w|~|w-w_0|<R\}$的一个单值解析映射为
+\[
+w = w_0 + R\frac{z^2-i}{z^2+i}
+\]
+\end{homeworkProblem}
 \newpage
