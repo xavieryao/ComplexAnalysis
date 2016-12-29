@@ -35,7 +35,38 @@
 \begin{theorem*}
     若$f(z)=\sum_{n=0}^{+\infty}C_nz^n$满足$C_n = a_n + b_n\qquad a_n,b_n\in\mathbb{R}$且$\sum_{n=0}^{+\infty}a_nz^n$的收敛半径是$R_1$，$\sum_{n=0}^{+\infty}b_nz^n$的收敛半径是$R_2$，则$R=\mathrm{min}\{R_1,R_2\}$
 \end{theorem*}
-\begin{theorem}
+\begin{theorem*}
+当$|z|<R$时，\[f(z)=\sum_{n=0}^{+\infty}\frac{f^{(n)}(0)}{n!}z^n\]
+即在收敛圆内，$f(z)$处处满足Cauchy-Riemann条件。根据Abel定理，收敛圆上处处是奇点。
+\end{theorem*}
+\begin{homeworkProblem}
+举出级数在其收敛圆上处处发散、既有发散的点也有收敛的点、处处收敛的例子。
+\solution
+\begin{enumerate}
+    \item 考察
+    \[f(z) = \sum_{n=0}^{+\infty}z^n = \frac{1}{1-z}\qquad R=1\]
+    $\forall z, |z|=1$，$f(z)$不存在，即收敛圆上处处发散。
+    \item 考察
+    \[f(z) = \sum_{n=1}^{+\infty}\frac{z^n}{n} = \frac{1}{1-z}\qquad R=1\]
+    $f(-1)=-\ln2$但$f(1)=+\infty$发散。更一般的，对$z=e^{i\theta}\quad\theta\in[0,2\pi)$有
+    \[\begin{split}
+    f(e^{i\theta}) &= \sum_{n=1}^{+\infty}\frac{\cos n\theta}{n}+i\sum_{n=1}^{+\infty}\frac{\sin n\theta}{n} \\
+    &= \frac{1}{2}\ln\frac{1}{2(1-\cos\theta)}+i\frac{\pi-\theta}{2}
+    \end{split}
+    \]
+    即收敛圆上除$z=1$外都收敛。
+    \item 考察
+    \[
+    f(z) = \sum_{n=1}^{+\infty}\frac{z^n}{n^2}\qquad R=1
+    \]
+    因为
+    \[
+    \sum_{n=1}^{+\infty}\left|\frac{z^n}{n^2}\right| \leq \sum_{n=1}^{+\infty} \frac{1}{n^2} = \frac{\pi^2}{6} < +\infty
+    \]
+    所以
+    \[\forall z:|z|<1\]有$f(z)$绝对收敛
+\end{enumerate}
+\end{homeworkProblem}
 \begin{homeworkProblem}
     将$\frac{1}{z-b}$在$z_0=a$处展成Laurent级数，$a\neq b$\\
 \solution
