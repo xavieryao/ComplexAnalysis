@@ -6,7 +6,7 @@
 \[
 f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_{C_r} \frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}z
 \]
-这里$C_r = |z-z_0| = r$
+这里$C_r = \{z|~|z-z_0| = r\}$
 \end{theorem*}
 \begin{theorem*}{Lioville 定理}
     有界的解析函数是常数
@@ -22,12 +22,12 @@ f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_{C_r} \frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}
 \begin{proof}
 有
 \begin{gather*}
-    J_{(x,y)} = \left(\begin{array}{cc}
+    J_{(x,y)} = \left\left(\begin{array}{cc}
     \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\
     \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}
-\end{array}\right)_{(x,y)} \\
+\end{array}\right)\right|_{(x,y)} \\
     \frac{\Delta u\Delta v}{\Delta x \Delta y} = |detJ|_{(x,y)}
-    = |\frac{\partial u}{\partial x} \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial x}|_{(x,y)}
+    = \left|\frac{\partial u}{\partial x} \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}\frac{\partial v}{\partial x}\right|_{(x,y)}
 \end{gather*}
 因为$f(z)=u+iv$是解析函数
 \begin{gather*}
@@ -41,7 +41,7 @@ f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_{C_r} \frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}
 即
 \[\Delta u\Delta v = |f'(x)|^2\Delta x \Delta y\]
 若$f'(x)\not\equiv0$，那么$f(x)$不是常数。此时假设$f'(z_0)\neq0$，则
-\[\exists \delta > 0\textrm{使得}|z-z_0| < \delta\textrm{时} f'(z) \neq 0\]
+\[\exists \delta > 0~\textrm{使得}|z-z_0| < \delta\textrm{时} f'(z) \neq 0\]
 $|z-z_0| < \delta$时
 \[\Delta u\Delta v > 0\]
 即像是二维区域。\newline

@@ -1,4 +1,4 @@
-\section{Chapter 2 Analytic Function}
+\section{Chapter 2 Analytic Functions}
 \begin{theorem*}{Cauchy-Riemann定理}
 $f(z)=u(x,y)+iv(x,y),\quad u,v\in\mathbb{C}^{(1)}$，则$f(z)$在$z_0=x_0+iy_0$点可导等价于
 \[
@@ -7,7 +7,10 @@ $f(z)=u(x,y)+iv(x,y),\quad u,v\in\mathbb{C}^{(1)}$，则$f(z)$在$z_0=x_0+iy_0$�
 \frac{\partial{u}}{\partial{y}} &= -\frac{\partial{v}}{\partial{x}}
 \end{array}\right
 \]
-在$z_0=x_0+iy_0$点成立
+在$z_0=x_0+iy_0$点成立，且
+\[
+f'(z) = \frac{\partial{u}}{\partial{x}} + i\frac{\partial{v}}{\partial{y}}
+\]
 \end{theorem*}
 \begin{homeworkProblem}
 $f(z)=f(x+iy)=u(x,y)+iv(x,y)$且$u,v\in C^{(n)}$，求$f(z)~$n阶可导的Cauchy-Riemann条件和$f^{(n)}(z)$\\
@@ -74,7 +77,7 @@ $u,v$需要满足Cauchy-Riemann条件
         \[\cos x = A\]
     解得\[
         \left\{\begin{array}{l}
-        x=\arccos A + 2k\pi\qquad k\in\mathrm{Z}\\
+        x=\arccos A + 2k\pi\qquad k\in\mathbb{Z}\\
         y=0
         \end{array}\right\]
     $|A|>1$时，令$\sin x=0$得
@@ -82,16 +85,22 @@ $u,v$需要满足Cauchy-Riemann条件
         \cos x = \pm1\\
         \frac{e^y+e^{-y}}{2} = |A| > 1
     \end{gather*}
-    考察函数$f(y)={e^y+e^{-y}}{2}-1$
+    考察函数$f(y)=\frac{e^y+e^{-y}}{2}-1$
     \begin{gather*}
         f(0) = 0\\
         \lim_{y\rightarrow+\infty}f(y) = \lim_{y\rightarrow-\infty}f(y) = +\infty
     \end{gather*}
     且$f(y)$连续。因此存在$y_A$使得$\pm y_A$是方程$\frac{e^y+e^{-y}}{2} = |A|$的解。\\
-    此时
+    则$A>0$时
     \[
     \left\{\begin{array}{l}
-    x=k\pi\qquad k\in\mathrm{Z}\\
+    x=2k\pi\qquad k\in\mathbb{Z}\\
+    y=\pm y_A
+    \end{array}\right\]
+    $A<0$时
+    \[
+    \left\{\begin{array}{l}
+    x=(2k+1)\pi\qquad k\in\mathbb{Z}\\
     y=\pm y_A
     \end{array}\right\]
 
@@ -99,7 +108,7 @@ $u,v$需要满足Cauchy-Riemann条件
     \[
     \frac{4A^2}{(e^{-y}+e^y)^2} + \frac{4B^2}{(e^{-y}-e^y)^2} = 1
     \]
-    令$f_{A,B}(y) = {4A^2}{(e^{-y}+e^y)^2} + \frac{4B^2}{(e^{-y}-e^y)^2}$，$f_{A,B}(y)$是偶函数。
+    令$f_{A,B}(y) = \frac{4A^2}{(e^{-y}+e^y)^2} + \frac{4B^2}{(e^{-y}-e^y)^2}$，$f_{A,B}(y)$是偶函数。
     \begin{gather*}
         \lim_{y\rightarrow0^{+}}f_{A,B}(y) = +\infty\\
         \lim_{y\rightarrow+\infty}f_{A,B}(y) = 0
@@ -146,18 +155,18 @@ w = u+iv &= \Ln z  &\\
 求\[\Ln (3+2i)\]
 \solution
 \[\begin{array} {lll}
-\Ln (3+2i) &= \ln(3+2i) + 2k\pi & k\in\mathbb{Z}\\
-&= \ln13 + i\arg(3+2i) + 2k\pi & k\in\mathbb{Z}
-\end{array}\end{split}\]
+\Ln (3+2i) &= \ln(3+2i) + 2k\pi i & k\in\mathbb{Z}\\
+&= \ln13 + i\arg(3+2i) + 2k\pi i & k\in\mathbb{Z}
+\end{array} \]
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
     求\[\Ln z^n\]
 \solution
 \[\begin{array} {lll}
-\Ln z^n &= \ln z^n + 2k\pi & k\in\mathbb{Z}\\
-&= \ln|z^n| + i\arg z^n + 2k\pi & k\in\mathbb{Z} \\
-&= n\ln|z| + ni\arg z + 2k\pi & k\in\mathbb{Z} \\
+\Ln z^n &= \ln z^n + 2k\pi i & k\in\mathbb{Z}\\
+&= \ln|z^n| + i\arg z^n + 2k\pi i & k\in\mathbb{Z} \\
+&= n\ln|z| + ni\arg z + 2k\pi i & k\in\mathbb{Z} \\
 &= n\Ln z
 \end{array}\]
 \end{homeworkProblem}

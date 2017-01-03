@@ -14,7 +14,7 @@
 \solution
 \[\begin{split}
 w &= \frac{az+b}{cz+d}\\
-&= \frac{a(z-(-\frac{b}{a}))}{b(z-(-\frac{d}{c}))}
+&= \frac{a(z-(-\frac{b}{a}))}{c(z-(-\frac{d}{c}))}
 \end{split}\]
 根据题意\[w(z_1)=0\]
 根据保对称性，$z_1$的对称点$z_1'=\frac{1}{\overline{z_1}}$满足
@@ -96,7 +96,7 @@ d = 1
 \[
 \left|\frac{\mathrm{d}w}{\mathrm{d}z}\right|
 = \frac{1-|z_1|^2}{|1-\overline{z_1}z|^2}
- = \frac{1-|z_1|^2}{|1-zz_1|^2}
+ = \frac{1-|z_1|^2}{|1-zz_1|^2} = \frac{1-|w|^2}{1-|z|^2}
 \]
 所以
 \[
@@ -108,11 +108,11 @@ d = 1
 求分式线性映射使$|z-z_0|<r\longrightarrow|w-w_0|<R$且使$z_1\rightarrow w_0$。这里$|z_1-z_0|<r$。
 \newline
 \solution
-$|z-z_0|<r$到以$z_0$为圆心的单位圆的映射为
+$|z-z_0|<r$到以原点为圆心的单位圆的映射为
 \[
 z' = \frac{z-z_0}{r}
 \]
-以$z_0$为圆心的单位圆到以$z_1$为圆心到单位圆的映射为
+以原点为圆心的单位圆到以$z_1$为圆心到单位圆的映射为
 \[
 w' = e^{i\theta}\frac{z'-z_1'}{1-\overline{z_1'}z'}
 \]
@@ -173,7 +173,7 @@ w &= u+iv \\
 \end{split}\]
 而
 \[
-v = \mathrm{Im}w = \frac{ad-bc}{(cx+d)^2+c^2y^2}
+v = \mathrm{Im}w = \frac{(ad-bc)y}{(cx+d)^2+c^2y^2}
 \]
 $y$与$v$同号
 $
@@ -183,9 +183,9 @@ $
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
-$L=ax+b$是与$x$轴交于$x_0$点，与$x$轴夹角为$\alpha$的直线，其中$\alpha\in[0,\pi)$，$x_0\in\mathbb{R}$。$M=\{z=u+iv|v>ux+b\}$，求将半平面$M$映到$|w-w_0|<R$的分式线性映射。\newline
+$L=ax+b$是与$x$轴交于$x_0$点，与$x$轴夹角为$\alpha$的直线，其中$\alpha\in[0,\pi)$，$x_0\in\mathbb{R}$。$M=\{z=u+iv|v>ua+b\}$，求将半平面$M$映到$|w-w_0|<R$的分式线性映射。\newline
 \solution
-将$M=\{z=u+iv|v>ux+b\}$映射到$\mathrm{z}>0$的映射为
+将$M=\{z=u+iv|v>ua+b\}$映射到$z>0$的映射为
 \[
 z_1 = (z-x_0)e^{-i\alpha}
 \]
@@ -205,12 +205,12 @@ w_1 = e^{i\theta}\frac{z_1 - z_1^0}{z_1-\overline{z_1^0}}
 \]
 即
 \[
-w = w_0 + Re^{i\theta}\frac{z-z_1}{(z-x_0)-\overline{(z_1-x_0)}e^{2i\alpha}}
+w = w_0 + Re^{i\theta}\frac{z-z_0}{(z-x_0)-\overline{(z_0-x_0)}e^{2i\alpha}}
 \]
 这里$\theta\in[0,2\pi)$，$z_1\in M$。\newline
 取$\theta=0$，则
 \[
-w = w_0 + R\frac{z-z_1}{(z-x_0)-\overline{(z_1-x_0)}e^{2i\alpha}}
+w = w_0 + R\frac{z-z_0}{(z-x_0)-\overline{(z_0-x_0)}e^{2i\alpha}}
 \]
 \end{homeworkProblem}
 
@@ -223,7 +223,7 @@ z_1 = (z-x_2)e^{-i\theta}
 \]
 将$N$映射到$O = \{z|  z\in\mathbb{C},\mathrm{Im}z > 0 \land \mathrm{Im}z < \pi\}$的映射为
 \[
-z_2 = \frac{z_1\pi}{h} = \frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)h\sin\theta}
+z_2 = \frac{z_1\pi}{h} = \frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)\sin\theta}
 \]
 将$O$映射到$\mathrm{Im}z>0$的映射为
 \[
@@ -233,7 +233,7 @@ z_3 = e^{z_2}
 \[\begin{split}
 w &= \frac{z_3 - i}{z_3+i}\\
 &= \frac{e^{z_2} - i}{e^{z_3} + i} \\
-&= \cfrac{e^{\frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)h\sin\theta}}-i}{e^{\frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)h\sin\theta}}+i}
+&= \cfrac{e^{\frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)\sin\theta}}-i}{e^{\frac{(z-x_2)e^{-i\theta}\pi}{(x_2-x_1)\sin\theta}}+i}
 \end{split}\]
 \end{homeworkProblem}
 
