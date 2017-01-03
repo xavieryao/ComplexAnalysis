@@ -1,6 +1,7 @@
 Recap of Complex Analysis
 ==========
-Lecture notes, in LaTeX.
+Lecture notes, in LaTeX. 
+[Download](https://github.com/xavieryao/ComplexAnalysis/raw/master/recap.pdf)
 
 ![](power.jpg)
 
