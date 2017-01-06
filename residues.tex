@@ -312,7 +312,7 @@ I_n &= \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\\
 由\[z_k^{2n}=-1=e^{\pi i}\]得\[z_k=e^\frac{\pi i+2(k-1)\pi i}{2n}=\cfrac {e^{\frac{k\pi i}{n}}} {e^{\frac{\pi i}{2n}}} \qquad k=1,2,\cdots,2n\]
 所以
 \[\begin{split}
-I_n &= -\frac{\pi i}{2n}\sum_{k=0}^{i}z_k \\
+I_n &= -\frac{\pi i}{2n}\sum_{k=1}^{n}z_k \\
 &= -\frac{\pi i}{2n}\cfrac{\sum_{k=1}^{n}e^{\frac{k\pi i}{n}}}{e^{\frac{\pi i}{2n}}}\\
 &= -\frac{\pi i}{2n}\cfrac{e^{\frac{\pi i}{n}}(1-e^{\pi i})}{e^{\frac{\pi i}{2n}}(1-e^{\frac{\pi i}{n}})}\\
 &=-\frac{\pi i}{n}\cfrac{e^{\frac{\pi i}{2n}}}{1-e^{\frac{\pi i}{n}}}
@@ -341,8 +341,8 @@ I_n &= -\frac{\pi i}{n}\cfrac{e^{\frac{\pi i}{2n}}}{1-e^{\frac{\pi i}{n}}}\\
 \[\begin{split}
 I_{n,r} &= \int_0^{+\infty}\frac{\dx}{r^{2n}+x^{2n}}\\
 &= \frac{1}{r^{2n}}\int_0^{+\infty}\frac{\dx}{1+(\frac{x}{r})^{2n}}\\
-&= \frac{1}{r^{2n+1}}\int_0^{+\infty}\frac{\mathrm{d}(\frac{x}{r})}{1+(\frac{x}{r})^{2n}}\\
-&= \frac{1}{r^{2n+1}}I_n
+&= \frac{1}{r^{2n-1}}\int_0^{+\infty}\frac{\mathrm{d}(\frac{x}{r})}{1+(\frac{x}{r})^{2n}}\\
+&= \frac{1}{r^{2n-1}}I_n
 \end{split}\]
 \end{homeworkProblem}
 \begin{homeworkProblem}
@@ -355,7 +355,7 @@ I_{n,r} &= \int_0^{+\infty}\frac{\dx}{r^{2n}+x^{2n}}\\
 J_n &= \int_0^{+\infty}\frac{\dx}{(1+x^2)^n}\\
 &=\frac{1}{2}\int_{-\infty}^{+\infty}\frac{\dx}{(1+x^2)^n}\\
 &=\lim_{R\rightarrow+\infty}\frac{1}{2}\int_{-R}^{+R}\frac{\dx}{(1+x^2)^n}\\
-&=\frac{1}{2}2\pi (i\Res[\frac{1}{(1+z^2)^n}, i]
+&=\frac{1}{2}(2\pi i\Res[\frac{1}{(1+z^2)^n}, i]
 - \lim_{R\rightarrow+\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{1}{(1+z^2)^n}\mathrm{d}z)\\
 &=\frac{1}{2}(2\pi i\Res[\frac{1}{(1+z^2)^n}, i])\\
 &=\pi i\Res[\frac{1}{(1+z^2)^n}, i]
