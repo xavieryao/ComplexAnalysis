@@ -309,7 +309,7 @@ I_n &= \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\\
 &= \pi i\sum_{k=1}^{n}\frac{1}{2nz_k^{2n-1}}\\
 &= -\frac{\pi i}{2n}\sum_{k=1}^{n}z_k
 \end{split}\]
-由\[z_k^{2n}=-1=e^{\pi i}\]得\[z_k=e^\frac{\pi i+2(k-1)\pi i}{2n}=\cfrac{e^{k\pi i}{n}}{e^{\pi i}{2n}} \qquad k=1,2,\cdots,2n\]
+由\[z_k^{2n}=-1=e^{\pi i}\]得\[z_k=e^\frac{\pi i+2(k-1)\pi i}{2n}=\cfrac {e^{\frac{k\pi i}{n}}} {e^{\frac{\pi i}{2n}}} \qquad k=1,2,\cdots,2n\]
 所以
 \[\begin{split}
 I_n &= -\frac{\pi i}{2n}\sum_{k=0}^{i}z_k \\
@@ -404,11 +404,11 @@ J_{n,r} &= \int_0^{+\infty}\frac{\dx}{(r^2+x^2)^n}\\
 则
 \[\begin{split}
 I_{a,b,k} &= \int_0^{+\infty}\frac{x\sin kx}{(x^2+a^2)(x^2+b^2)}\dx\\
-&= \frac{1}{2}\mathrm{Im}\int_{-\infty}^{+\infty}\frac{xe^{\i kx}}{(x^2+a^2)(x^2+b^2)}\dx
+&= \frac{1}{2}\mathrm{Im}\int_{-\infty}^{+\infty}\frac{xe^{ikx}}{(x^2+a^2)(x^2+b^2)}\dx
 \end{split}\]
 而
 \[\begin{split}
-\int_{-\infty}^{+\infty}\frac{xe^{\i x}}{(x^2+a^2)(x^2+b^2)}\dx
+\int_{-\infty}^{+\infty}\frac{xe^{ix}}{(x^2+a^2)(x^2+b^2)}\dx
 &= 2\pi i\{\Res[\frac{ze^{ikz}}{(z^2+a^2)(z^2+b^2)}, ai] + \Res[\frac{ze^{ikz}}{(z^2+a^2)(z^2+b^2)}, bi]\}\\
 &= 2\pi i [\frac{aie^{-ka}}{4(ai)^3+2ai(a^2+b^2)} + \frac{bie^{-kb}}{4(bi)^3+2bi(a^2+b^2)}]\\
 &= \frac{\pi i}{b^2-a^2}(e^{-ka}-e^{-kb})
