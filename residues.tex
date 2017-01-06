@@ -296,8 +296,8 @@ I_n &= \frac{1}{2}2\pi i(\Res[\frac{1}{(x^2+a^2)(x^2+b^2)}, i|a|] + \Res[\frac{1
 I_{n} &= \int_0^{+\infty}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}\\
 &= \frac{1}{2}\int_{-\infty}^{+\infty}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}\\
 &= \lim_{R\rightarrow+\infty}\frac{1}{2}\int_{-R}^{+R}\frac{\dx}{1+x^{2n}}\qquad n\in\mathbb{N}\\
-&= \frac{1}{2}2\pi i\sum_{k=0}^{i}\Res[\frac{1}{1+z^{2n}}, z_k] - \frac{1}{2}\lim_{R\rightarrow+\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{1}{1+z^{2n}}\mathrm{d}z\\
-&=\frac{1}{2}2\pi i\sum_{k=0}^{i}\Res[\frac{1}{1+z^{2n}}, z_k]
+&= \frac{1}{2}2\pi i\sum_{k=0}^{n}\Res[\frac{1}{1+z^{2n}}, z_k] - \frac{1}{2}\lim_{R\rightarrow+\infty}\int_{|z|=R, \mathrm{Im}z>0}\frac{1}{1+z^{2n}}\mathrm{d}z\\
+&=\frac{1}{2}2\pi i\sum_{k=0}^{n}\Res[\frac{1}{1+z^{2n}}, z_k]
 \end{split}\]
 其中
 \[z_k^{2n}+1=0, \mathrm{Im}z_k>0\]
